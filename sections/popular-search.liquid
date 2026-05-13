@@ -1,0 +1,186 @@
+<div class="main-container"
+     style="margin-top: {{ section.settings.margin_top }}px; margin-bottom: {{ section.settings.margin_bottom }}px;">
+  <div class="popular-searches-section">
+    <div class="container">
+      <h3 class="popular-searches-title">People also search for</h3>
+      <div class="popular-searches-blocks">
+        {% for block in section.blocks %}
+          <div class="popular-search-block">
+            {% if block.settings.title != blank %}
+              <h4 class="block-title">{{ block.settings.title }}</h4>
+            {% endif %}
+
+            {% assign nav_menu = linklists[block.settings.menu].links %}
+            {% if nav_menu != blank %}
+              <ul class="block-links">
+                {% for link in nav_menu %}
+                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.main-container{
+  margin-top: 20px;
+}
+.container{
+  max-width: 1440px !important;
+  padding: 0 !important;
+}
+.popular-searches-section {
+  padding: 20px 20px;
+}
+
+.popular-searches-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #111111; 
+}
+
+.popular-searches-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.popular-search-block {
+  background:rgba(245, 217, 217, 0.77); 
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+.block-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color:rgb(22, 22, 21);
+}
+
+.block-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* links ke beech gap */
+}
+
+.block-links li {
+  margin: 0;
+  position: relative;
+}
+
+.block-links li::after {
+  content: "|";
+  margin-left: 8px;
+  color: #999;
+}
+
+.block-links li:last-child::after {
+  content: "";
+}
+
+.block-links a {
+  font-size: 15px;
+  color: #666;
+  text-decoration: none;
+  white-space: nowrap; /* link ek hi line me rahega, wrap agle link ke liye hoga */
+}
+
+.block-links a:hover {
+  text-decoration: underline;
+}
+/* Tablet (max-width: 991px) -> 2 columns */
+@media (max-width: 991px) {
+  .popular-searches-blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (max-width: 575px) -> 1 column */
+@media (max-width: 575px) {
+  .popular-searches-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  .block-links {
+    gap: 5px; /* mobile pe thoda chhota gap */
+  }
+
+  .block-title {
+    font-size: 16px; /* thoda chhota title */
+  }
+
+  .block-links a {
+    font-size: 14px; /* link font chhota */
+  }
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Popular Searches",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top Margin",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom Margin",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "search_block",
+      "name": "Search Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block Title"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Select Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Popular Searches",
+      "blocks": [
+        {
+          "type": "search_block"
+        },
+        {
+          "type": "search_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

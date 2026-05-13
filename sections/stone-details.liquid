@@ -1,0 +1,189 @@
+{% schema %}
+{
+  "name": "Stone & Video Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "stone",
+      "name": "Stone Details",
+      "settings": []
+    },
+    {
+      "type": "video",
+      "name": "Stone Video",
+      "settings": []
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stone Details",
+      "blocks": [
+        { "type": "stone" },
+        { "type": "video" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<div class="main_container">
+  <div class="stone-details-video-section">
+    <div class="stone-details-video-container">
+
+      {% for block in section.blocks %}
+
+        {% if block.type == 'stone' %}
+          {% if product.metafields.custom.stone_details != blank or
+                product.metafields.custom.diamond_shape != blank or
+                product.metafields.custom.features != blank or
+                product.metafields.custom.width != blank or
+                product.metafields.custom.height != blank or
+                product.metafields.custom.shipping_est_day != blank or
+                product.metafields.custom.est_day != blank %}
+
+            <div class="stone-details-wrap-container {% if product.metafields.custom.video == blank %}full-width{% endif %}">
+              <div class="stone-details-wrap">
+                <h2 class="main-heading">Product Details</h2>
+                <ul style="padding-bottom: 10px;">
+
+                  {% if product.metafields.custom.stone_details.value != blank %}
+                    <li><strong>● Product type</strong></li>
+                    {% for detail in product.metafields.custom.stone_details.value %}
+                      <li class="product-details">✦ {{ detail }}</li>
+                    {% endfor %}
+                  {% endif %}
+
+                  {% if product.metafields.custom.diamond_shape.value != blank %}
+                    <li><strong>● Diamond Shape.</strong></li>
+                    {% for shape in product.metafields.custom.diamond_shape.value %}
+                      <li class="product-details">✦ {{ shape }}</li>
+                    {% endfor %}
+                  {% endif %}
+
+                  {% if product.metafields.custom.features.value != blank %}
+                    <li><strong>● Features.</strong></li>
+                    {% for feature in product.metafields.custom.features.value %}
+                      <li class="product-details">✦ {{ feature }}</li>
+                    {% endfor %}
+                  {% endif %}
+
+                  {% if product.metafields.custom.width.value != blank %}
+                    <li><strong>● Width.</strong></li>
+                    <li class="product-details">✦ {{ product.metafields.custom.width.value }}</li>
+                  {% endif %}
+
+                  {% if product.metafields.custom.height.value != blank %}
+                    <li><strong>● Height.</strong></li>
+                    <li class="product-details">✦ {{ product.metafields.custom.height.value }}</li>
+                  {% endif %}
+
+                  {% if product.metafields.custom.shipping_est_day.value != blank %}
+                    <li><strong>● Shipping Est.</strong></li>
+                    <li class="product-details">✦ {{ product.metafields.custom.shipping_est_day.value }} day(s)</li>
+                  {% endif %}
+
+                  {% if product.metafields.custom.est_day.value != blank %}
+                    <li><strong>● Est Delivery.</strong></li>
+                    <li class="product-details">✦ {{ product.metafields.custom.est_day.value }} day(s)</li>
+                  {% endif %}
+
+                </ul>
+              </div>
+            </div>
+
+          {% endif %}
+        {% endif %}
+
+        {% if block.type == 'video' and product.metafields.custom.video != blank %}
+          <div class="product-video-wrap
+            {% if product.metafields.custom.stone_details == blank and product.metafields.custom.diamond_shape == blank and product.metafields.custom.features == blank and product.metafields.custom.width == blank and product.metafields.custom.height == blank and product.metafields.custom.shipping_est_day == blank and product.metafields.custom.est_day == blank %}
+              full-width
+            {% endif %}">
+            <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              controls 
+              width="100%" 
+              preload="auto" 
+              height="auto"
+            >
+              <source src="{{ product.metafields.custom.video | file_url }}" type="video/mp4">
+            </video>
+          </div>
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+<style>
+  .main_container{
+    max-width:1990px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+  .stone-details-video-section {
+    margin: 50px 0;
+  }
+  .stone-details-video-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+  .stone-details-wrap-container{
+    width: 50%;
+    background-color: #F9F9F9;
+  }
+  .product-video-wrap {
+    width: 50%;
+  }
+  .full-width {
+    width: 100% !important;
+  }
+  .stone-details-wrap{
+    padding: 20px 10px 0 60px;
+  }
+  .stone-details-wrap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .stone-details-wrap ul li {
+    font-size: 14px;
+    color: #444;
+  }
+  .stone-details-wrap ul li strong {
+    display: block;
+    font-size: 18px;
+    color: #111;
+  }
+  .product-video-wrap video {
+    width: 100%;
+    max-width: 700px;
+  }
+.main-heading {
+  font-size: 30px;  
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.product-details{
+padding-left: 10px;
+}
+
+  @media only screen and (max-width: 767px){
+    .main_container {
+      padding: 0 30px;
+    }
+    .stone-details-wrap-container,
+    .product-video-wrap {
+      width: 100% !important;
+    }
+    .stone-details-video-container {
+    flex-wrap: wrap;
+    }
+  }
+</style>

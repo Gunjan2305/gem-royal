@@ -1,0 +1,114 @@
+<input type="hidden" name="properties[Color]" id="selectedColorInput" value="">
+
+
+                    {% assign colors = product.metafields.shopify['color-pattern'].value %}
+                    {% if colors != blank %}
+                      <p class="selectedColor"><span class="selectedColorValue"></span></p>
+                    {% endif %}
+                      <div class="metal-options-wrapper" style="display:flex; gap:15px;">
+                        {% for metal in product.metafields.shopify['color-pattern'].value %}
+                          <div class="metal-option" style="text-align:center;">
+                            {% if metal.color %}
+                              <span
+                                class="swatch"
+                                title="{{ metal.label }}"
+                                style="display:inline-block; width:25px; height:25px; border-radius:50%; border:1.5px solid #555555; background: {{ metal.color }};"
+                              ></span>
+                            {% endif %}
+                            {% if metal.label %}
+                              <p class="colorlabel" style="display:none;">{{ metal.label }}</p>
+                              <!-- hidden labels -->
+                            {% endif %}
+                          </div>
+                        {% endfor %}
+                      </div>
+
+
+<style>
+  .selectedColorValue {
+    display: none;
+  }
+  .product-metal{
+    margin-bottom: 10px;
+  }
+
+  .swatch {
+    position: relative;
+  }
+
+  .swatch::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+  }
+
+  .swatch:hover::after {
+    opacity: 1;
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const swatches = document.querySelectorAll('.metal-option .swatch');
+  const selectedColorText = document.querySelector('.selectedColorValue');
+  const hiddenInput = document.getElementById('selectedColorInput');
+
+  // If swatches exist, set default to the first one
+  if (swatches.length > 0) {
+    const firstLabel = swatches[0].parentElement.querySelector('.colorlabel');
+    const firstColor = firstLabel ? firstLabel.textContent.trim() : 'Unknown';
+    selectedColorText.textContent = firstColor;
+    hiddenInput.value = firstColor;
+
+    // Default border highlight
+    swatches.forEach(s => s.style.border = "1px solid #ccc");
+    swatches[0].style.boxShadow = "0 0 0 2px #fff, 0 0 0 3px #000";
+  }
+  swatches.forEach((swatch) => {
+    swatch.addEventListener('click', function () {
+      const labelElement = swatch.parentElement.querySelector('.colorlabel');
+      const colorTitle = labelElement ? labelElement.textContent.trim() : 'Unknown';
+      selectedColorText.textContent = colorTitle;
+      hiddenInput.value = colorTitle;
+      swatches.forEach(s => s.style.boxShadow = "none");
+      swatch.style.boxShadow = "0 0 0 2px #fff, 0 0 0 3px #000";
+      swatches.forEach(s => s.parentElement.classList.remove('active'));
+      swatch.parentElement.classList.add('active');
+
+      // Update URL parameter
+      const url = new URL(window.location);
+      url.searchParams.set('color', colorTitle);
+      window.history.replaceState({}, '', url);
+    });
+  });
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('color')) {
+    const colorFromUrl = params.get('color');
+    selectedColorText.textContent = colorFromUrl;
+    hiddenInput.value = colorFromUrl;
+
+    swatches.forEach(s => {
+      const label = s.parentElement.querySelector('.colorlabel');
+      if (label && label.textContent.trim() === colorFromUrl) {
+        s.style.boxShadow = "0 0 0 2px #fff, 0 0 0 3px #000";
+        s.parentElement.classList.add('active');
+      } else {
+        s.style.boxShadow = "none";
+        s.parentElement.classList.remove('active');
+      }
+    });
+  }
+});
+</script>

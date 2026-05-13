@@ -1,0 +1,381 @@
+{% liquid
+  assign enable_rtl = settings.rtl
+  assign iso_code = request.locale.iso_code
+  assign lis_language_rtl = settings.language_rtl
+  if lis_language_rtl != blank
+    if lis_language_rtl contains iso_code
+      assign enable_rtl = true
+    else
+      assign enable_rtl = false
+    endif
+  endif
+%}
+
+<!doctype html>
+<html
+  class="no-js{% if enable_rtl %} body-rtl{% endif %}"
+  lang="{{ iso_code }}"
+>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_mobile_browser }}">
+    {% if template contains 'product' %}
+      {% assign product_custom_canonical = product.metafields.custom.canonical_url %}
+      {% if product_custom_canonical != blank %}
+        <link rel="canonical" href="{{ product_custom_canonical | escape }}">
+      {% else %}
+        <link rel="canonical" href="{{ canonical_url }}">
+      {% endif %}
+    {% elsif template contains 'collection' %}
+      {% assign collection_custom_canonical = collection.metafields.custom.canonical_url %}
+      {% if collection_custom_canonical != blank %}
+        <link rel="canonical" href="{{ collection_custom_canonical | escape }}">
+      {% else %}
+        <link rel="canonical" href="{{ canonical_url }}">
+      {% endif %}
+    {% else %}
+      <link rel="canonical" href="{{ canonical_url }}">
+    {% endif %}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+    <meta name="google-site-verification" content="S6qZOLAXxawhCqSS277aqtsi-8x9iJMlvhk5Yl5bXDI" />
+    <meta name="description" content="{{ page_description | default: shop.description | default: shop.name | escape }}">
+    {% render 'meta-tags' %}
+    {{ content_for_header }}
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+    {%- render 'head-assets' -%}
+
+    {{ shop.metafields.loox.global_html_head }}
+    <style>
+      .preload-page {
+        background-color: #fff;
+        z-index: 9999;
+        opacity: 1;
+        left: 0;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        display: flex;
+      }
+      .preload-screen-loading-bar {
+        width: 13rem;
+        height: 0.2rem;
+        border-radius: 0.2rem;
+        background-color: #ebebeb;
+        overflow: hidden;
+        position: relative;
+        display: block;
+      }
+      .preload-screen-loading-bar::after {
+        content: '';
+        height: 100%;
+        width: 6.8rem;
+        position: absolute;
+        transform: translate(-3.4rem);
+        background-color: #111111;
+        border-radius: 0.2rem;
+        animation: initial-loading 1s ease infinite;
+      }
+      @keyframes initial-loading {
+        0% {
+          transform: translate(-6.8rem);
+        }
+        100% {
+          transform: translate(13rem);
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const preload = document.querySelector('#preload-page');
+        if (!preload) return;
+        preload.style.transition = 'opacity .2s cubic-bezier(0.7, 0, 0.2, 1)';
+        preload.style.opacity = '0';
+        setTimeout(() => preload.remove(), 200);
+      });
+    </script>
+  </head>
+  <body class="{% unless request.design_mode %}is-frontend{% endunless %} gradient {% if template.name == 'collection' %}template-collection{% endif %}{% if template.name == 'product' %}template-product {% endif %}{% if template.name == 'index' %}template-index{% endif %} {%- if settings.general_layout == 'boxed' -%}box-layout{% elsif settings.general_layout == 'full_width' %}full-width-layout{% else %}{%- endif -%} {% if settings.content_center %}item-center{% endif %} {% if settings.image_style != blank %}product-images-style-radius{% endif %} {% if template.suffix contains 'layout-2' %}product-digital-layout-2{% endif %}">
+    <div class="bls-wrapper">
+      <div
+        id="preload-page"
+        class="preload-page"
+      >
+        <span class="preload-screen-loading-bar"></span>
+      </div>
+      <div class="bls__overlay d-none-overlay"></div>
+      {%- sections 'header-group' -%}
+      <main
+        id="MainContent"
+        class="content-for-layout focus-none{% if template == 'product' or template == 'page.wishlist' or template == "page.recently-viewed-products" %} skeleton-product-detail{% endif %}"
+        role="main"
+        tabindex="-1"
+      >
+        {{ content_for_layout }}
+      </main>
+      {%- sections 'overlay-group' -%}
+      {%- sections 'footer-group' -%}
+      {%- section 'mobile-stickybar' -%}
+      {%- section 'custom-colors' -%}
+    </div>
+    {%- render 'content-bottom' -%}
+    {%- render 'scripts-tag' -%}
+    {{ shop.metafields.loox.global_html_body }}
+  </body>
+</html>
+<style>
+  @media screen and (max-width: 1024px) {
+    .desktop-logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -10px);
+    }
+  }
+  .product-images-style-radius .bls__product-img {
+      box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.1);
+  }
+  .template-index .footer.remove-space-homepage {
+    margin-top: 0 !important;
+}
+</style>
+
+<script>
+document.addEventListener("click", function (event) {
+  const swatch = event.target.closest(".swatch");
+  if (!swatch) return;
+  const modal = document.querySelector(".dialog-open");
+  
+  if (!modal) {
+    console.warn("No modal (.dialog-open) found");
+    return;
+  }
+
+  const selectedColorValue = modal.querySelector(".selectedColorValue");
+  const colorLabel = swatch.parentElement.querySelector(".colorlabel");
+  const hiddenInputField = modal.querySelector("#selectedColorInputField");
+
+  if (!colorLabel) {
+    console.warn("No .colorlabel found for this swatch");
+    return;
+  }
+
+  const selectedColor = colorLabel.textContent.trim();
+  selectedColorValue.innerHTML = `<span>${selectedColor}</span>`;
+  if (hiddenInputField) {
+    hiddenInputField.value = selectedColor;
+  }
+
+  console.log("Selected:", selectedColor);
+});
+
+document.addEventListener("change", function (event) {
+  const productSize = event.target.closest(".productSize");
+  if (!productSize) return;
+
+  const modal = document.querySelector(".dialog-open");
+  if (!modal) {
+    console.warn("No modal (.dialog-open) found");
+    return;
+  }
+
+  const hiddenInputField = modal.querySelector("#selectedProductsSize"); 
+  const selectedSize = productSize.value;
+
+  if (hiddenInputField) {
+    hiddenInputField.value = selectedSize;
+  }
+
+  console.log("Selected size:", selectedSize);
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const swatches = document.querySelectorAll(".swatch");
+  const selectedColorText = document.querySelector(".selectedColorValue");
+  const hiddenColorInput = document.getElementById("selectedColorInputField");
+
+  swatches.forEach(swatch => {
+    swatch.addEventListener("click", () => {
+      document.querySelectorAll(".swatch").forEach(s => s.classList.remove("selected-swatch"));
+      swatch.classList.add("selected-swatch");
+
+      const colorName = swatch.closest(".metal-option").querySelector(".colorlabel").textContent;
+      selectedColorText.textContent = colorName;
+      hiddenColorInput.value = colorName;
+    });
+  });
+});
+
+document.addEventListener("click", function (event) {
+  const triggerBtn = event.target.closest(".bls__js-addtocart, .bls__product-quickview");
+
+  const clickedSwatch = event.target.closest(".metal-option");
+  if (clickedSwatch) {
+    const allSwatches = document.querySelectorAll(".metal-option");
+    const selectedColorText = document.querySelector(".selectedColorValue");
+    const selectedColorInput = document.getElementById("selectedColorInputField");
+
+    allSwatches.forEach(opt => opt.classList.remove("selected-swatch"));
+
+    clickedSwatch.classList.add("selected-swatch");
+    const colorName = clickedSwatch.querySelector(".colorlabel")?.textContent.trim();
+    if (colorName) {
+      selectedColorText.textContent = colorName;
+      selectedColorInput.value = colorName;
+    }
+  }
+
+  if (triggerBtn) {
+    {% comment %} console.log("Trigger add to cart or quick view"); {% endcomment %}
+  }
+});
+
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swatches = document.querySelectorAll('.metal-option');
+    const colorText = document.querySelector('.selectedColorValue');
+    const colorInput = document.getElementById('selectedColorInputField');
+
+    swatches.forEach((option) => {
+      option.addEventListener('click', () => {
+        // Remove old selection
+        document.querySelectorAll('.swatch').forEach((s) => s.classList.remove('selected-swatch'));
+
+        // Add new selection
+        const swatch = option.querySelector('.swatch');
+        const label = option.querySelector('.colorlabel').textContent;
+
+        swatch.classList.add('selected-swatch');
+        colorText.textContent = label;
+        colorInput.value = label;
+      });
+    });
+  });
+</script>
+<style>
+    {% comment %} Product size {% endcomment %}
+   .productSize{
+      border-radius: 0;
+      padding: 6px 11px;
+      margin: 0;
+      height: auto;
+      width: 100%;
+      max-width: 154px;
+      border-color: #000;
+      border-radius: 4px;
+  }
+  .productSizeheading{
+      font-size: 18px;
+      font-weight: 500;
+      color: #000000;
+      letter-spacing: 2px;
+      margin: 0 0 10px 0 !important;
+  }
+  .product-size-selector{
+    margin: 0 0 15px 0;
+  }
+
+  .submenu-content{
+    background: linear-gradient(169deg, rgba(255, 255, 255, 1), rgba(245, 217, 217, 1) 49.64%, rgba(255, 255, 255, 1) 99%) !important;
+  }
+
+span.bls__product-color-swatches[data-color="rose gold"],
+.bls__product-color-swatches[data-color="rose gold"] {
+  background-color: #B76E79 !important;
+  box-shadow: none !important;
+}
+</style>
+<script>
+  function updateColorLabels() {
+  document.querySelectorAll('.bls__link-filter').forEach(link => {
+    const clrbox = link.querySelector('.clrbox');
+    const tooltip = link.querySelector('.bls_tooltip-content');
+
+    if (clrbox && tooltip) {
+      const colorName = clrbox.getAttribute('data-color');
+      if (colorName && tooltip.textContent.trim() !== colorName) {
+        tooltip.textContent = colorName;
+        link.setAttribute('aria-label', colorName);
+      }
+    }
+  });
+  {% comment %} console.log('Color labels updated'); {% endcomment %}
+}
+
+// Run once on load
+document.addEventListener('DOMContentLoaded', () => {
+  updateColorLabels();
+
+  // Force full page reload when a color is selected
+  document.querySelectorAll('.bls__link-filter').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href) {
+        e.preventDefault();
+        console.log('🔄 Reloading page for:', href);
+        window.location.href = href; 
+      }
+    });
+  });
+});
+
+// Run when Shopify sections are reloaded (Shopify-native filters)
+document.addEventListener('shopify:section:load', updateColorLabels);
+
+// Catch jQuery AJAX reloads (Search & Discovery app uses these internally)
+if (typeof jQuery !== 'undefined') {
+  jQuery(document).ajaxSuccess(() => updateColorLabels());
+}
+
+// Observe any DOM changes inside the filter wrapper
+function observeFilterArea() {
+  const filterContainer =
+    document.querySelector('.filter-content') ||
+    document.querySelector('.facets-container') ||
+    document.querySelector('.shopify-facet-sidebar') ||
+    document.querySelector('[data-facets-container]');
+
+  if (filterContainer) {
+    const observer = new MutationObserver(mutations => {
+      let changed = false;
+      for (const m of mutations) {
+        if (m.addedNodes.length || m.removedNodes.length) {
+          changed = true;
+          break;
+        }
+      }
+      if (changed) updateColorLabels();
+    });
+
+    observer.observe(filterContainer, {
+      childList: true,
+      subtree: true,
+    });
+
+    console.log('Watching filter area for changes...');
+  } else {
+    console.warn('No filter container found yet — retrying...');
+    setTimeout(observeFilterArea, 1000); 
+  }
+}
+observeFilterArea();
+</script>

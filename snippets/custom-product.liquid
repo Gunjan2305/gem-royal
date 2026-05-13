@@ -1,0 +1,49 @@
+{% assign colors = product.metafields.shopify['color-pattern'].value %}
+
+{% if colors != blank %}
+  <p class="selectedColor">
+    Color: <span class="selectedColorValue">{{ colors[0].label }}</span>
+  </p>
+{% endif %}
+
+<div class="metal-options-wrapper" style="display:flex; gap:15px;">
+  {% for metal in colors %}
+    <div class="metal-option" 
+         data-color-label="{{ metal.label }}" 
+         style="text-align:center; cursor:pointer;">
+         
+      {% if metal.color %}
+        <span class="swatch" 
+              style="display:inline-block; width:35px; height:35px; 
+                     border-radius:50%; border:1.5px solid #555555; 
+                     background: {{ metal.color }};">
+        </span>
+      {% endif %}
+      
+      {% if metal.label %}
+        <p class="colorlabel" style="display:none;">{{ metal.label }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const options = document.querySelectorAll(".metal-option");
+  const selectedColorText = document.querySelector(".selectedColorValue");
+
+  options.forEach(option => {
+    option.addEventListener("click", function() {
+      // Remove active border from all
+      options.forEach(opt => opt.querySelector(".swatch").style.border = "1.5px solid #555555");
+
+      // Add active border to clicked
+      this.querySelector(".swatch").style.border = "2.5px solid #000";
+
+      // Update label
+      const label = this.getAttribute("data-color-label");
+      selectedColorText.textContent = label;
+    });
+  });
+});
+</script>
