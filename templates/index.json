@@ -55,11 +55,12 @@
         "image_banner_7wq97Y",
         "image_banner_zwG9gx"
       ],
+      "disabled": true,
       "name": "Banner carousel",
       "settings": {
         "heading": "Collection",
         "heading_border": false,
-        "description": "<p></p>",
+        "description": "",
         "text_alignment": "text-center",
         "container": "container",
         "color_scheme": "",
