@@ -221,7 +221,7 @@
       ],
       "name": "t:sections.collection-tab.name",
       "settings": {
-        "heading": "",
+        "heading": "Today's Tranding Sets",
         "heading_border": false,
         "description": "",
         "text_alignment": "text-center",
