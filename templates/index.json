@@ -167,7 +167,7 @@
         "heading_border": true,
         "description": "<p><strong>Styles that everyone is falling in love with!</strong></p>",
         "text_alignment": "text-center",
-        "container": "container",
+        "container": "full-width",
         "color_scheme": "scheme-735c978e-d3b7-474f-a3f7-562370446399",
         "design_layout": "grid",
         "design_collection": "design-3",
