@@ -133,22 +133,25 @@
         "collection_item_8ArVBn": {
           "type": "collection_item",
           "settings": {
-            "title_collection": "",
-            "collection": ""
+            "title_collection": "New Arrivals",
+            "collection": "new-arrivals",
+            "image": "shopify://shop_images/download_31982da5-09f6-4274-b8af-c8b8c59e8f3e.webp"
           }
         },
         "collection_item_mQMz7a": {
           "type": "collection_item",
           "settings": {
-            "title_collection": "",
-            "collection": ""
+            "title_collection": "Kurti",
+            "collection": "kurti",
+            "image": "shopify://shop_images/photo_6260217741239764487_y.webp"
           }
         },
         "collection_item_hmB3XY": {
           "type": "collection_item",
           "settings": {
-            "title_collection": "",
-            "collection": ""
+            "title_collection": "Co Ord Set",
+            "collection": "co-ord-set",
+            "image": "shopify://shop_images/IMG_20260216_114554_jpg_d0fa7651-b783-4880-92e9-871d8b944492.webp"
           }
         }
       },
