@@ -12,6 +12,29 @@
     "slideshow_K3fdta": {
       "type": "slideshow",
       "blocks": {
+        "slider_item_z7wDFg": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify://shop_images/download_eaee4f41-6c1d-490a-afd9-926acff6fa7d.webp",
+            "image_opacity": 0,
+            "content_box": "content_in_container",
+            "content_custom_width": true,
+            "content_width": 50,
+            "content_background_color": "",
+            "content_opacity": 100,
+            "horizontal_position": "left_position",
+            "vertical_position": "middle_position",
+            "slider_effect": "effect_fadeindown",
+            "text_alignment": "center",
+            "text_alignment_on_mobile": "center",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "",
+            "button_text": "",
+            "button_type": "primary"
+          }
+        },
         "slider_item_gdeV7H": {
           "type": "slider_item",
           "settings": {
@@ -60,6 +83,7 @@
         }
       },
       "block_order": [
+        "slider_item_z7wDFg",
         "slider_item_gdeV7H",
         "slider_item_RJewwB"
       ],
