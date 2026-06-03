@@ -203,21 +203,29 @@
         "collection_beabhd": {
           "type": "collection",
           "settings": {
-            "title": "",
-            "collection": ""
+            "title": "New Arrivals",
+            "collection": "new-arrivals"
           }
         },
         "collection_LkpjBz": {
           "type": "collection",
           "settings": {
-            "title": "",
-            "collection": ""
+            "title": "Kurti",
+            "collection": "kurti"
+          }
+        },
+        "collection_7Y6Ljm": {
+          "type": "collection",
+          "settings": {
+            "title": "Co Ord Set",
+            "collection": "co-ord-set"
           }
         }
       },
       "block_order": [
         "collection_beabhd",
-        "collection_LkpjBz"
+        "collection_LkpjBz",
+        "collection_7Y6Ljm"
       ],
       "name": "t:sections.collection-tab.name",
       "settings": {
@@ -234,7 +242,7 @@
         "item_desktop": 4,
         "column_gap": 30,
         "carousel_autoplay": false,
-        "carousel_loop": false,
+        "carousel_loop": true,
         "carousel_arrows": false,
         "carousel_pagination": "carousel_none",
         "number_of_rows": 1,
