@@ -6,7 +6,89 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
-  "sections": {},
-  "order": []
+ */
+{
+  "sections": {
+    "banner_carousel_wwt6GK": {
+      "type": "banner-carousel",
+      "blocks": {
+        "image_banner_7wq97Y": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "50",
+            "text_align": "left",
+            "text_alignment_on_mobile": "center",
+            "text_horizontal_position": "left",
+            "text_position": "top",
+            "background_content_text": "#ffffff",
+            "slider_effect": "effect_fadeindown",
+            "subtext": "Subtext",
+            "title": "Heading",
+            "content": "<p>Description</p>",
+            "btn_content": "Shop now",
+            "link": "",
+            "open_link": "_blank",
+            "button_type": "link"
+          }
+        },
+        "image_banner_zwG9gx": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "50",
+            "text_align": "left",
+            "text_alignment_on_mobile": "center",
+            "text_horizontal_position": "left",
+            "text_position": "top",
+            "background_content_text": "#ffffff",
+            "slider_effect": "effect_fadeindown",
+            "subtext": "Subtext",
+            "title": "Heading",
+            "content": "<p>Description</p>",
+            "btn_content": "Shop now",
+            "link": "",
+            "open_link": "_blank",
+            "button_type": "link"
+          }
+        }
+      },
+      "block_order": [
+        "image_banner_7wq97Y",
+        "image_banner_zwG9gx"
+      ],
+      "name": "Banner carousel",
+      "settings": {
+        "heading": "Collection",
+        "heading_border": false,
+        "description": "<p></p>",
+        "text_alignment": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "hover_effect": "zoom",
+        "column_gap": 30,
+        "show_arrow_desktop": false,
+        "show_arrow_mobile": false,
+        "show_bullet_desktop": false,
+        "show_bullet_mobile": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "h_font_size": 36,
+        "h_font_weight": "default",
+        "h_spacing": 10,
+        "sub_font_size": 18,
+        "sub_font_weight": "default",
+        "sub_spacing": 10,
+        "des_font_size": 16,
+        "des_font_weight": "default",
+        "des_spacing": 30,
+        "button_font_size": 16,
+        "button_font_weight": "default",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    }
+  },
+  "order": [
+    "banner_carousel_wwt6GK"
+  ]
 }

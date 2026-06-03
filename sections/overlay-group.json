@@ -1,1 +1,100 @@
-{"name":"t:settings_schema.Overlay_group.name","type":"custom.overlay","sections":{"before_you_leave_6BKbPJ":{"type":"before-you-leave","disabled":true,"settings":{"color_scheme":"scheme-735c978e-d3b7-474f-a3f7-562370446399","bf_show_time":1,"bf_banner":"shopify:\/\/shop_images\/FLR17208-5Y.jpg","bf_collection":"engagement-rings","bf_limit_product":6,"bf_heading":"Before you leave...","bf_sub_heading":"<p>Take 20% off your first order 20% OFF<\/p>","bf_desc":"<p>Enter the code below at checkout to get 20% off your first order. [discount_code]<\/p>","bf_code":"BOGO20","bf_show_bb":true,"bf_label_bb":"","bf_link_bb":""}},"fake_order_nmqXKL":{"type":"fake-order","settings":{"hidden_mobile_fake_order":false,"fake_product":["1-carat-round-diamond-solitaire-yellow-gold-engagement-ring-for-her-923","1-carat-round-diamond-vintage-14k-gold-engagement-ring-for-women","3-carat-pear-diamond-halo-rose-gold-engagement-ring-for-her","1-carat-round-diamond-eternity-14k-white-gold-wedding-band-for-her","1-carat-round-diamond-eternity-14k-gold-wedding-band-for-her","0-16-carat-round-diamond-flush-set-half-eternity-14k-gold-wedding-band-for-women","1-carat-round-diamond-half-eternity-14k-gold-wedding-band-for-women","1-carat-round-cut-diamond-eternity-14k-gold-wedding-band-for-women","1-carat-round-diamond-starburst-eternity-14k-white-gold-wedding-band-for-her","1-carat-round-diamond-eternity-14k-gold-wedding-band-for-women","1-carat-round-cut-diamond-half-eternity-14k-gold-wedding-band-for-her","1-carat-round-diamond-half-eternity-14k-white-gold-wedding-band-for-women","1-carat-baguette-marquise-and-round-diamond-eternity-14k-gold-wedding-band-for-women","1-carat-marquise-baguette-round-diamond-vintage-14k-gold-promise-ring-for-her","1-carat-pear-and-round-diamond-half-eternity-10k-gold-wedding-band-for-women","1-carat-baguette-and-round-diamond-half-eternity-10k-gold-wedding-band-for-her","1-carat-round-diamond-pave-eternity-14k-gold-wedding-band-for-women","1-carat-marquise-and-round-diamond-art-deco-14k-rose-gold-engagement-ring-for-women","1-carat-baguette-and-round-diamond-half-eternity-14k-gold-wedding-band-for-women","1-carat-cushion-cut-and-round-diamond-halo-14k-gold-engagement-ring-for-her","1-carat-marquise-diamond-chevron-14k-rose-gold-promise-ring-for-women","1-carat-round-diamond-celestial-vintage-14k-gold-engagement-ring-for-her","1-carat-oval-and-round-diamond-half-eternity-10k-white-gold-wedding-band-for-her","1-carat-round-diamond-solitaire-14k-gold-engagement-ring-for-her","1-carat-emerlad-cut-vintage-14k-rose-gold-engagement-ring-for-her","1-carat-round-diamond-channel-set-half-eternity-18k-gold-wedding-band-for-her","1-carat-baguette-diamond-half-eternity-14k-gold-wedding-band-for-her"],"fake_user":"Emma (California) | Sophia (Texas) | Olivia (New York) | Ava (Ohio) | Isabella (Washington) | Mia (Florida) | Amelia (Illinois) | Harper (Georgia) | Evelyn (Michigan) | Charlotte (Arizona) | Abigail (Colorado) | Emily (Virginia) | Madison (Oregon) | Lily (Nevada) | Chloe (Pennsylvania) | Ella (Indiana) | Grace (Tennessee) | Aria (Massachusetts) | Scarlett (Minnesota) | Nora (New Jersey)","text_verify":"Verify","delay_time":"5000","display_time":"6000"}},"popular_search_Q4Kqjj":{"type":"popular-search","blocks":{"search_block_KjFBJf":{"type":"search_block","settings":{"title":"Engagement Ring Shapes","menu":"er-engagement-rings-shape"}},"search_block_6f9BRG":{"type":"search_block","settings":{"title":"Engagement Rings","menu":"er-engagement-rings-carat"}},"search_block_8MGyYY":{"type":"search_block","settings":{"title":"Engagement Ring Styles","menu":"er-engagement-ring-style"}},"search_block_UDGPWY":{"type":"search_block","settings":{"title":"Wedding Bands","menu":"er-wedding-band"}},"search_block_tm7aRd":{"type":"search_block","settings":{"title":"Fine Jewelry","menu":"er-fine-jewelry"}}},"block_order":["search_block_KjFBJf","search_block_6f9BRG","search_block_8MGyYY","search_block_UDGPWY","search_block_tm7aRd"],"name":"Popular Searches","settings":{"margin_top":20,"margin_bottom":50}}},"order":["before_you_leave_6BKbPJ","fake_order_nmqXKL","popular_search_Q4Kqjj"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:settings_schema.Overlay_group.name",
+  "type": "custom.overlay",
+  "sections": {
+    "before_you_leave_6BKbPJ": {
+      "type": "before-you-leave",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-735c978e-d3b7-474f-a3f7-562370446399",
+        "bf_show_time": 1,
+        "bf_collection": "engagement-rings",
+        "bf_limit_product": 6,
+        "bf_heading": "Before you leave...",
+        "bf_sub_heading": "<p>Take 20% off your first order 20% OFF</p>",
+        "bf_desc": "<p>Enter the code below at checkout to get 20% off your first order. [discount_code]</p>",
+        "bf_code": "BOGO20",
+        "bf_show_bb": true,
+        "bf_label_bb": "",
+        "bf_link_bb": ""
+      }
+    },
+    "fake_order_nmqXKL": {
+      "type": "fake-order",
+      "settings": {
+        "hidden_mobile_fake_order": false,
+        "fake_product": [],
+        "fake_user": "Emma (California) | Sophia (Texas) | Olivia (New York) | Ava (Ohio) | Isabella (Washington) | Mia (Florida) | Amelia (Illinois) | Harper (Georgia) | Evelyn (Michigan) | Charlotte (Arizona) | Abigail (Colorado) | Emily (Virginia) | Madison (Oregon) | Lily (Nevada) | Chloe (Pennsylvania) | Ella (Indiana) | Grace (Tennessee) | Aria (Massachusetts) | Scarlett (Minnesota) | Nora (New Jersey)",
+        "text_verify": "Verify",
+        "delay_time": "5000",
+        "display_time": "6000"
+      }
+    },
+    "popular_search_Q4Kqjj": {
+      "type": "popular-search",
+      "blocks": {
+        "search_block_KjFBJf": {
+          "type": "search_block",
+          "settings": {
+            "title": "Engagement Ring Shapes",
+            "menu": ""
+          }
+        },
+        "search_block_6f9BRG": {
+          "type": "search_block",
+          "settings": {
+            "title": "Engagement Rings",
+            "menu": ""
+          }
+        },
+        "search_block_8MGyYY": {
+          "type": "search_block",
+          "settings": {
+            "title": "Engagement Ring Styles",
+            "menu": ""
+          }
+        },
+        "search_block_UDGPWY": {
+          "type": "search_block",
+          "settings": {
+            "title": "Wedding Bands",
+            "menu": ""
+          }
+        },
+        "search_block_tm7aRd": {
+          "type": "search_block",
+          "settings": {
+            "title": "Fine Jewelry",
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "search_block_KjFBJf",
+        "search_block_6f9BRG",
+        "search_block_8MGyYY",
+        "search_block_UDGPWY",
+        "search_block_tm7aRd"
+      ],
+      "name": "Popular Searches",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "before_you_leave_6BKbPJ",
+    "fake_order_nmqXKL",
+    "popular_search_Q4Kqjj"
+  ]
+}
