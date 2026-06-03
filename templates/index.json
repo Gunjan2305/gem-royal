@@ -175,7 +175,7 @@
         "show_count_product": false,
         "custom_width_images": true,
         "width_image": 300,
-        "images_style": true,
+        "images_style": false,
         "image_ratio": "custom",
         "custom_ratio": "4:6",
         "custom_column": 6,
