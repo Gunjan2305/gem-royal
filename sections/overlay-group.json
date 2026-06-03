@@ -16,6 +16,7 @@
       "settings": {
         "color_scheme": "scheme-735c978e-d3b7-474f-a3f7-562370446399",
         "bf_show_time": 1,
+        "bf_logo": "shopify://shop_images/transperent.png",
         "bf_collection": "engagement-rings",
         "bf_limit_product": 6,
         "bf_heading": "Before you leave...",
