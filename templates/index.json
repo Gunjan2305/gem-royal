@@ -192,10 +192,61 @@
         "padding_bottom": 0,
         "reset_spacing": false
       }
+    },
+    "collection_tab_KfQYiM": {
+      "type": "collection-tab",
+      "blocks": {
+        "collection_beabhd": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": ""
+          }
+        },
+        "collection_LkpjBz": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_beabhd",
+        "collection_LkpjBz"
+      ],
+      "name": "t:sections.collection-tab.name",
+      "settings": {
+        "heading": "",
+        "heading_border": false,
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "tab_design": "horizontal",
+        "tab_style": "tab_desgin_1",
+        "tab_type": "grid",
+        "limit_products": 8,
+        "item_desktop": 4,
+        "column_gap": 30,
+        "carousel_autoplay": false,
+        "carousel_loop": false,
+        "carousel_arrows": false,
+        "carousel_pagination": "carousel_none",
+        "number_of_rows": 1,
+        "load_more_button_enable": false,
+        "button_action": "load",
+        "button_label": "Load more",
+        "button_type": "primary",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
     }
   },
   "order": [
     "slideshow_K3fdta",
-    "collection_list_cUkmxX"
+    "collection_list_cUkmxX",
+    "collection_tab_KfQYiM"
   ]
 }
