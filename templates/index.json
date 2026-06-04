@@ -414,10 +414,10 @@
             "link": "",
             "open_link": "_blank",
             "content_banner_horizontal": "Bottom",
-            "subtext": "Subtext",
-            "title": "Heading",
-            "content": "<p>Description</p>",
-            "btn_content": "Shop now",
+            "subtext": "",
+            "title": "",
+            "content": "",
+            "btn_content": "",
             "button_type": "primary"
           }
         }
