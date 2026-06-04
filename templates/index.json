@@ -278,26 +278,18 @@
             "title_collection": "",
             "collection": ""
           }
-        },
-        "collection_item_wDcGiR": {
-          "type": "collection_item",
-          "settings": {
-            "title_collection": "",
-            "collection": ""
-          }
         }
       },
       "block_order": [
         "collection_item_j4XtqB",
         "collection_item_4RrUpg",
-        "collection_item_hc8CUb",
-        "collection_item_wDcGiR"
+        "collection_item_hc8CUb"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
-        "heading": "",
+        "heading": "Shop by Event",
         "heading_border": false,
-        "description": "",
+        "description": "<p>Here you can buy with your event!</p>",
         "text_alignment": "text-center",
         "container": "container",
         "color_scheme": "",
