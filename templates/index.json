@@ -381,6 +381,86 @@
         "padding_bottom": 0,
         "reset_spacing": false
       }
+    },
+    "banner_image_iBwTmg": {
+      "type": "banner-image",
+      "blocks": {
+        "image_banner_ViRGNf": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "6",
+            "banner_type": "image",
+            "image": "shopify://shop_images/New_sEtsy.svg",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "image_opacity": 0,
+            "link": "",
+            "open_link": "_blank",
+            "content_banner_horizontal": "Bottom",
+            "subtext": "",
+            "title": "",
+            "content": "",
+            "btn_content": "",
+            "button_type": "primary"
+          }
+        },
+        "image_banner_BY77KM": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "6",
+            "banner_type": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "image_opacity": 0,
+            "link": "",
+            "open_link": "_blank",
+            "content_banner_horizontal": "Bottom",
+            "subtext": "Subtext",
+            "title": "Heading",
+            "content": "<p>Description</p>",
+            "btn_content": "Shop now",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "image_banner_ViRGNf",
+        "image_banner_BY77KM"
+      ],
+      "name": "t:sections.banner-image.name",
+      "settings": {
+        "heading": "",
+        "heading_border": false,
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "show_box_background": false,
+        "color_background": "",
+        "bg_overlay": 100,
+        "column_gap": 30,
+        "layout_on_mobile": false,
+        "design_banner": "text-overlay-image",
+        "text_align": "text-left",
+        "hover_effect": "zoom",
+        "h_font_size": 36,
+        "h_font_weight": "default",
+        "h_spacing": 10,
+        "sub_font_size": 18,
+        "sub_font_weight": "default",
+        "sub_spacing": 10,
+        "des_font_size": 16,
+        "des_font_weight": "default",
+        "des_spacing": 30,
+        "button_font_size": 16,
+        "button_font_weight": "default",
+        "button_spacing": 0,
+        "image_behavior": "none",
+        "text_position": "top",
+        "content_on_mobile": false,
+        "reset_color_mb": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
     }
   },
   "order": [
@@ -388,6 +468,7 @@
     "collection_list_cUkmxX",
     "collection_tab_KfQYiM",
     "collection_list_pTfH94",
-    "icon_box_GrL4Tj"
+    "icon_box_GrL4Tj",
+    "banner_image_iBwTmg"
   ]
 }
