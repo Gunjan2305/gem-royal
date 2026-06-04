@@ -388,9 +388,9 @@
         "image_banner_ViRGNf": {
           "type": "image_banner",
           "settings": {
-            "banner_width": "12",
+            "banner_width": "6",
             "banner_type": "image",
-            "image": "shopify://shop_images/7507d4e7-c013-424d-87db-9bea93fc0f2f.jpg",
+            "image": "shopify://shop_images/Co-Ord-sml.webp",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image_opacity": 0,
             "link": "",
@@ -402,10 +402,29 @@
             "btn_content": "",
             "button_type": "primary"
           }
+        },
+        "image_banner_CYaxNC": {
+          "type": "image_banner",
+          "settings": {
+            "banner_width": "6",
+            "banner_type": "image",
+            "image": "shopify://shop_images/saree_3.webp",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "image_opacity": 0,
+            "link": "",
+            "open_link": "_blank",
+            "content_banner_horizontal": "Bottom",
+            "subtext": "Subtext",
+            "title": "Heading",
+            "content": "<p>Description</p>",
+            "btn_content": "Shop now",
+            "button_type": "primary"
+          }
         }
       },
       "block_order": [
-        "image_banner_ViRGNf"
+        "image_banner_ViRGNf",
+        "image_banner_CYaxNC"
       ],
       "name": "t:sections.banner-image.name",
       "settings": {
