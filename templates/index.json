@@ -408,15 +408,16 @@
           "settings": {
             "banner_width": "6",
             "banner_type": "image",
+            "image": "shopify://shop_images/download.jpg",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image_opacity": 0,
             "link": "",
             "open_link": "_blank",
             "content_banner_horizontal": "Bottom",
-            "subtext": "Subtext",
-            "title": "Heading",
-            "content": "<p>Description</p>",
-            "btn_content": "Shop now",
+            "subtext": "",
+            "title": "",
+            "content": "",
+            "btn_content": "",
             "button_type": "primary"
           }
         }
