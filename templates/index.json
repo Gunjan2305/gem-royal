@@ -323,12 +323,41 @@
         "padding_bottom": 0,
         "reset_spacing": false
       }
+    },
+    "testimonial_YkD6Wg": {
+      "type": "testimonial",
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "heading": "Made for Every Moment. Built Beyond Trends.",
+        "heading_border": false,
+        "description": "<h5><br/>Through premium fabrics, refined tailoring, and responsible craftsmanship, we're creating clothing that transcends seasons and becomes part of your story.<br/></h5>",
+        "text_align": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "content_width": 100,
+        "design": "design_1",
+        "testi_text_size": "small",
+        "show_rating": true,
+        "img_view": "default",
+        "img_position": "position-top",
+        "car_gap": 30,
+        "carousel_item_desktop": 3,
+        "autoplay": false,
+        "loop": false,
+        "show_arrow": true,
+        "reveal_on_scroll": false,
+        "pagination_style": "dots",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
     }
   },
   "order": [
     "slideshow_K3fdta",
     "collection_list_cUkmxX",
     "collection_tab_KfQYiM",
-    "collection_list_pTfH94"
+    "collection_list_pTfH94",
+    "testimonial_YkD6Wg"
   ]
 }
