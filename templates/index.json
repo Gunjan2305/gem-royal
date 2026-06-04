@@ -324,29 +324,59 @@
         "reset_spacing": false
       }
     },
-    "testimonial_YkD6Wg": {
-      "type": "testimonial",
-      "name": "t:sections.testimonials.name",
+    "icon_box_GrL4Tj": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_7WWApT": {
+          "type": "iconbox",
+          "settings": {
+            "icon": "shopify://shop_images/star.png",
+            "heading": "ATELIER-GRADE MATERIALS",
+            "description": ""
+          }
+        },
+        "iconbox_4XWLDK": {
+          "type": "iconbox",
+          "settings": {
+            "icon": "shopify://shop_images/tree.png",
+            "heading": "Free & Easy Returns",
+            "description": ""
+          }
+        },
+        "iconbox_QpYCfG": {
+          "type": "iconbox",
+          "settings": {
+            "icon": "shopify://shop_images/cookie.png",
+            "heading": "Human Support, Always",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_7WWApT",
+        "iconbox_4XWLDK",
+        "iconbox_QpYCfG"
+      ],
+      "name": "t:sections.image-box.name",
       "settings": {
         "heading": "Made for Every Moment. Built Beyond Trends.",
         "heading_border": false,
-        "description": "<h5><br/>Through premium fabrics, refined tailoring, and responsible craftsmanship, we're creating clothing that transcends seasons and becomes part of your story.<br/></h5>",
-        "text_align": "text-center",
+        "description": "<h4><br/>Through premium fabrics, refined tailoring, and responsible craftsmanship, we're creating clothing that transcends seasons and becomes part of your story.<br/><br/></h4>",
+        "text_alignment": "text-center",
         "container": "container",
         "color_scheme": "",
-        "content_width": 100,
-        "design": "design_1",
-        "testi_text_size": "small",
-        "show_rating": true,
-        "img_view": "default",
+        "custom_column": 3,
+        "column_gap": 30,
+        "icon_width": 42,
+        "icon_spacing": 20,
+        "carousel_mobile": false,
+        "ib_h_font_size": 20,
+        "ib_h_font_weight": "default",
+        "ib_spacing": 20,
+        "ib_desc_font_size": 16,
+        "ib_img_view": "default",
         "img_position": "position-top",
-        "car_gap": 30,
-        "carousel_item_desktop": 3,
-        "autoplay": false,
-        "loop": false,
-        "show_arrow": true,
-        "reveal_on_scroll": false,
-        "pagination_style": "dots",
+        "content_text_alignment": "text-center",
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -358,6 +388,6 @@
     "collection_list_cUkmxX",
     "collection_tab_KfQYiM",
     "collection_list_pTfH94",
-    "testimonial_YkD6Wg"
+    "icon_box_GrL4Tj"
   ]
 }
