@@ -262,21 +262,24 @@
           "type": "collection_item",
           "settings": {
             "title_collection": "Profession Wear",
-            "collection": ""
+            "collection": "",
+            "image": "shopify://shop_images/download_31982da5-09f6-4274-b8af-c8b8c59e8f3e.webp"
           }
         },
         "collection_item_4RrUpg": {
           "type": "collection_item",
           "settings": {
             "title_collection": "Casual Wear",
-            "collection": ""
+            "collection": "",
+            "image": "shopify://shop_images/ChatGPTImageMay23_2026_10_56_26AM.webp"
           }
         },
         "collection_item_hc8CUb": {
           "type": "collection_item",
           "settings": {
             "title_collection": "Traditional Wear",
-            "collection": ""
+            "collection": "",
+            "image": "shopify://shop_images/photo_6260217741239764487_y.webp"
           }
         }
       },
