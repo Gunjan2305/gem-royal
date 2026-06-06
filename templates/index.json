@@ -492,13 +492,27 @@
           "settings": {
             "brand_image": "shopify://shop_images/ethical_clothing_certifications_world_fair_trade_organization.webp"
           }
+        },
+        "brand_Yeabz3": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/download_4037da40-667b-4c33-90c9-af878d912182.jpg"
+          }
+        },
+        "brand_UFJqd3": {
+          "type": "brand",
+          "settings": {
+            "brand_image": "shopify://shop_images/images.png"
+          }
         }
       },
       "block_order": [
         "brand_9KM4xB",
         "brand_jYaDtL",
         "brand_jhy7Rc",
-        "brand_ai7iNn"
+        "brand_ai7iNn",
+        "brand_Yeabz3",
+        "brand_UFJqd3"
       ],
       "name": "Brand list",
       "settings": {
