@@ -323,7 +323,7 @@ body:not(.template-index) .page-header {
 .header-logo-center .header-middle,
 .header-default .middle-top,
 .header-classic .header-middle {
-  padding: var(--header-padding) 0;
+  padding: 30px 0;
 }
 
 .header_minicart #cart-icon-bubble,
