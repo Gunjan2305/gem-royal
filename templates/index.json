@@ -613,8 +613,18 @@
         "testimonials_Jin4NA": {
           "type": "testimonials",
           "settings": {
-            "description": "<p>You can add text content from press comments, reviews, or testimonials here.</p>",
-            "text_name": "Siarhei Dzenisenka",
+            "image": "shopify://shop_images/download_8fc1c8a4-547b-4d11-853f-7764a6ce2b0e.webp",
+            "description": "<p>I absolutely loved this co-ord set! The fabric is soft, comfortable.</p>",
+            "text_name": "Aparna H.",
+            "product_item": ""
+          }
+        },
+        "testimonials_7xRQX6": {
+          "type": "testimonials",
+          "settings": {
+            "image": "shopify://shop_images/blobio-imr_c4f5c8b1989f4b0cabaab97f290ecead.webp",
+            "description": "<p><br/>I received several compliments when wearing it. Overall, it's great value for money and a must-have addition to any wardrobe.<br/><br/></p>",
+            "text_name": "Varshini",
             "product_item": ""
           }
         }
@@ -622,7 +632,8 @@
       "block_order": [
         "testimonials_xr3CRr",
         "testimonials_FVhLMT",
-        "testimonials_Jin4NA"
+        "testimonials_Jin4NA",
+        "testimonials_7xRQX6"
       ],
       "name": "t:sections.testimonials_product.name",
       "settings": {
