@@ -920,6 +920,12 @@ body:not(.template-index) .page-header {
     --search_result-item: 2;
     --search_result-item-gap: 2rem;
   }
+  .header-mega-shop .middle-top,
+.header-logo-center .header-middle,
+.header-default .middle-top,
+.header-classic .header-middle {
+  padding: 30px 0px;
+}
 }
 
 @media only screen and (max-width: 767px) and (min-width: 576px) {
