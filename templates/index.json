@@ -588,6 +588,67 @@
         "padding_bottom": 0,
         "reset_spacing": false
       }
+    },
+    "product_testimonials_7LbHw7": {
+      "type": "product-testimonials",
+      "blocks": {
+        "testimonials_xr3CRr": {
+          "type": "testimonials",
+          "settings": {
+            "description": "<p>You can add text content from press comments, reviews, or testimonials here.</p>",
+            "text_name": "Siarhei Dzenisenka",
+            "product_item": ""
+          }
+        },
+        "testimonials_FVhLMT": {
+          "type": "testimonials",
+          "settings": {
+            "description": "<p>You can add text content from press comments, reviews, or testimonials here.</p>",
+            "text_name": "Siarhei Dzenisenka",
+            "product_item": ""
+          }
+        },
+        "testimonials_Jin4NA": {
+          "type": "testimonials",
+          "settings": {
+            "description": "<p>You can add text content from press comments, reviews, or testimonials here.</p>",
+            "text_name": "Siarhei Dzenisenka",
+            "product_item": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_xr3CRr",
+        "testimonials_FVhLMT",
+        "testimonials_Jin4NA"
+      ],
+      "name": "t:sections.testimonials_product.name",
+      "settings": {
+        "heading": "What People Are Saying",
+        "heading_border": false,
+        "description": "",
+        "text_align": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "show_rating": true,
+        "show_image": true,
+        "show_verified": true,
+        "img_view": "default",
+        "img_position": "position-left",
+        "aspect_ratio": "3/4",
+        "custom_ratio": "21:9",
+        "content_width": 50,
+        "car_gap": 30,
+        "carousel_item_desktop": 2,
+        "autoplay": false,
+        "loop": false,
+        "show_arrow": true,
+        "reveal_on_scroll": false,
+        "carousel_pagination": "carousel_none",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
     }
   },
   "order": [
@@ -598,6 +659,7 @@
     "icon_box_GrL4Tj",
     "banner_image_iBwTmg",
     "brand_list_e3Kpzb",
-    "shopable_video_mjb4x9"
+    "shopable_video_mjb4x9",
+    "product_testimonials_7LbHw7"
   ]
 }
