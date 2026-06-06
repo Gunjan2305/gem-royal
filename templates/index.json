@@ -576,7 +576,7 @@
         "container": "container",
         "color_scheme": "",
         "section_type": "carousel",
-        "custom_column": 4,
+        "custom_column": 5,
         "column_gap": 30,
         "aspect_ratio": "3/4",
         "custom_ratio": "1:1",
