@@ -466,120 +466,45 @@
         "reset_spacing": false
       }
     },
-    "banner_image_tUCktP": {
-      "type": "banner-image",
+    "brand_list_e3Kpzb": {
+      "type": "brand-list",
       "blocks": {
-        "image_banner_aYDBw6": {
-          "type": "image_banner",
+        "brand_9KM4xB": {
+          "type": "brand",
           "settings": {
-            "banner_width": "3",
-            "banner_type": "image",
-            "image": "shopify://shop_images/04_copy_360x_56a3e79a-13bc-4ab4-9fc5-76ebc9fec039.webp",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "image_opacity": 0,
-            "link": "",
-            "open_link": "_blank",
-            "content_banner_horizontal": "Bottom",
-            "subtext": "",
-            "title": "",
-            "content": "",
-            "btn_content": "",
-            "button_type": "primary"
+            "brand_image": "shopify://shop_images/04_copy_360x_ea303347-66fb-4227-b2b0-91f64540ef83.webp"
           }
         },
-        "image_banner_DnGHpn": {
-          "type": "image_banner",
+        "brand_jYaDtL": {
+          "type": "brand",
           "settings": {
-            "banner_width": "3",
-            "banner_type": "image",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "image_opacity": 0,
-            "link": "",
-            "open_link": "_blank",
-            "content_banner_horizontal": "Bottom",
-            "subtext": "",
-            "title": "",
-            "content": "",
-            "btn_content": "",
-            "button_type": "primary"
+            "brand_image": "shopify://shop_images/02_copy2_copy_360x_d106b1a4-a0cd-4717-b0ce-9f7d6ef9b282.avif"
           }
         },
-        "image_banner_dDcfDx": {
-          "type": "image_banner",
+        "brand_jhy7Rc": {
+          "type": "brand",
           "settings": {
-            "banner_width": "3",
-            "banner_type": "image",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "image_opacity": 0,
-            "link": "",
-            "open_link": "_blank",
-            "content_banner_horizontal": "Bottom",
-            "subtext": "",
-            "title": "",
-            "content": "",
-            "btn_content": "",
-            "button_type": "primary"
+            "brand_image": "shopify://shop_images/download_aed5a718-c5c3-44c8-bb8a-24ebd2aa00a4.jpg"
           }
         },
-        "image_banner_7DFCfk": {
-          "type": "image_banner",
+        "brand_ai7iNn": {
+          "type": "brand",
           "settings": {
-            "banner_width": "3",
-            "banner_type": "image",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "image_opacity": 0,
-            "link": "",
-            "open_link": "_blank",
-            "content_banner_horizontal": "Bottom",
-            "subtext": "",
-            "title": "",
-            "content": "",
-            "btn_content": "",
-            "button_type": "primary"
+            "brand_image": "shopify://shop_images/ethical_clothing_certifications_world_fair_trade_organization.webp"
           }
         }
       },
       "block_order": [
-        "image_banner_aYDBw6",
-        "image_banner_DnGHpn",
-        "image_banner_dDcfDx",
-        "image_banner_7DFCfk"
+        "brand_9KM4xB",
+        "brand_jYaDtL",
+        "brand_jhy7Rc",
+        "brand_ai7iNn"
       ],
-      "name": "t:sections.banner-image.name",
+      "name": "Brand list",
       "settings": {
-        "heading": "",
-        "heading_border": false,
-        "description": "",
-        "text_alignment": "text-center",
-        "container": "container",
-        "color_scheme": "",
-        "show_box_background": false,
-        "color_background": "",
-        "bg_overlay": 100,
-        "column_gap": 30,
-        "layout_on_mobile": false,
-        "design_banner": "text-overlay-image",
-        "text_align": "text-left",
-        "hover_effect": "zoom",
-        "h_font_size": 36,
-        "h_font_weight": "default",
-        "h_spacing": 10,
-        "sub_font_size": 18,
-        "sub_font_weight": "default",
-        "sub_spacing": 10,
-        "des_font_size": 16,
-        "des_font_weight": "default",
-        "des_spacing": 30,
-        "button_font_size": 16,
-        "button_font_weight": "default",
-        "button_spacing": 0,
-        "image_behavior": "none",
-        "text_position": "top",
-        "content_on_mobile": false,
-        "reset_color_mb": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
+        "background_color": "",
+        "margin_top": 40,
+        "margin_bottom": 40
       }
     }
   },
@@ -590,6 +515,6 @@
     "collection_list_pTfH94",
     "icon_box_GrL4Tj",
     "banner_image_iBwTmg",
-    "banner_image_tUCktP"
+    "brand_list_e3Kpzb"
   ]
 }
