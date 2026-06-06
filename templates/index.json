@@ -662,6 +662,22 @@
         "padding_bottom": 0,
         "reset_spacing": false
       }
+    },
+    "custom_html_gfHQjQ": {
+      "type": "custom-html",
+      "name": "t:sections.custom-html.name",
+      "settings": {
+        "heading": "",
+        "heading_border": false,
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "content_html": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
     }
   },
   "order": [
@@ -673,6 +689,7 @@
     "banner_image_iBwTmg",
     "brand_list_e3Kpzb",
     "shopable_video_mjb4x9",
-    "product_testimonials_7LbHw7"
+    "product_testimonials_7LbHw7",
+    "custom_html_gfHQjQ"
   ]
 }
