@@ -432,7 +432,7 @@
         "heading_border": false,
         "description": "",
         "text_alignment": "text-center",
-        "container": "full-width",
+        "container": "container",
         "color_scheme": "",
         "show_box_background": false,
         "color_background": "",
