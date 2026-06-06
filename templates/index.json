@@ -604,8 +604,9 @@
         "testimonials_FVhLMT": {
           "type": "testimonials",
           "settings": {
-            "description": "<p>You can add text content from press comments, reviews, or testimonials here.</p>",
-            "text_name": "Siarhei Dzenisenka",
+            "image": "shopify://shop_images/download_6a524968-1570-4e30-baff-cd6704efe3e3.webp",
+            "description": "<p>Fully worth it cod set, I am so for this order</p>",
+            "text_name": "Sunny s.",
             "product_item": ""
           }
         },
