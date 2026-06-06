@@ -595,8 +595,9 @@
         "testimonials_xr3CRr": {
           "type": "testimonials",
           "settings": {
-            "description": "<p>You can add text content from press comments, reviews, or testimonials here.</p>",
-            "text_name": "Siarhei Dzenisenka",
+            "image": "shopify://shop_images/download_2196fda5-1fa9-4a7a-aea5-bca117e410a4.webp",
+            "description": "<p>Thank you so much very soft snd beautiful product ...i am so happy<br/></p>",
+            "text_name": "Nishayadav",
             "product_item": ""
           }
         },
