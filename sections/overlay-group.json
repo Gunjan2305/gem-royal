@@ -38,63 +38,10 @@
         "delay_time": "5000",
         "display_time": "6000"
       }
-    },
-    "popular_search_Q4Kqjj": {
-      "type": "popular-search",
-      "blocks": {
-        "search_block_KjFBJf": {
-          "type": "search_block",
-          "settings": {
-            "title": "Engagement Ring Shapes",
-            "menu": ""
-          }
-        },
-        "search_block_6f9BRG": {
-          "type": "search_block",
-          "settings": {
-            "title": "Engagement Rings",
-            "menu": ""
-          }
-        },
-        "search_block_8MGyYY": {
-          "type": "search_block",
-          "settings": {
-            "title": "Engagement Ring Styles",
-            "menu": ""
-          }
-        },
-        "search_block_UDGPWY": {
-          "type": "search_block",
-          "settings": {
-            "title": "Wedding Bands",
-            "menu": ""
-          }
-        },
-        "search_block_tm7aRd": {
-          "type": "search_block",
-          "settings": {
-            "title": "Fine Jewelry",
-            "menu": ""
-          }
-        }
-      },
-      "block_order": [
-        "search_block_KjFBJf",
-        "search_block_6f9BRG",
-        "search_block_8MGyYY",
-        "search_block_UDGPWY",
-        "search_block_tm7aRd"
-      ],
-      "name": "Popular Searches",
-      "settings": {
-        "margin_top": 20,
-        "margin_bottom": 50
-      }
     }
   },
   "order": [
     "before_you_leave_6BKbPJ",
-    "fake_order_nmqXKL",
-    "popular_search_Q4Kqjj"
+    "fake_order_nmqXKL"
   ]
 }
