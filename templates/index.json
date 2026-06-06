@@ -520,6 +520,74 @@
         "margin_top": 40,
         "margin_bottom": 40
       }
+    },
+    "shopable_video_mjb4x9": {
+      "type": "shopable-video",
+      "blocks": {
+        "video_7jf9U8": {
+          "type": "video",
+          "settings": {
+            "video_local": "shopify://files/videos/e68e3ae0208b42b687768e4c183558dd.HD-720p-1.6Mbps-26691090.mp4",
+            "product_item": ""
+          }
+        },
+        "video_Yy483g": {
+          "type": "video",
+          "settings": {
+            "video_local": "shopify://files/videos/0003bbfddba54a39b8ce3fe32799819f.HD-720p-1.6Mbps-22426380.mp4",
+            "product_item": ""
+          }
+        },
+        "video_mnYLJE": {
+          "type": "video",
+          "settings": {
+            "video_local": "shopify://files/videos/32147ee4a76d4033acbe567bc10561e8.HD-720p-1.6Mbps-38979785.mp4",
+            "product_item": ""
+          }
+        },
+        "video_ThR3pi": {
+          "type": "video",
+          "settings": {
+            "video_local": "shopify://files/videos/18d64de2b34c4000a246455ff5874871.HD-720p-1.6Mbps-26937964.mp4",
+            "product_item": ""
+          }
+        },
+        "video_cggmyR": {
+          "type": "video",
+          "settings": {
+            "video_local": "shopify://files/videos/7ad696bda77d4780946be6191e7c6c65.HD-720p-1.6Mbps-38979911.mp4",
+            "product_item": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_7jf9U8",
+        "video_Yy483g",
+        "video_mnYLJE",
+        "video_ThR3pi",
+        "video_cggmyR"
+      ],
+      "name": "t:sections.shopable-video.name",
+      "settings": {
+        "heading": "Shop the Look!",
+        "heading_border": false,
+        "description": "",
+        "text_alignment": "text-center",
+        "container": "container",
+        "color_scheme": "",
+        "section_type": "carousel",
+        "custom_column": 4,
+        "column_gap": 30,
+        "aspect_ratio": "3/4",
+        "custom_ratio": "1:1",
+        "carousel_autoplay": false,
+        "carousel_loop": false,
+        "carousel_arrows": false,
+        "carousel_pagination": "carousel_none",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
     }
   },
   "order": [
@@ -529,6 +597,7 @@
     "collection_list_pTfH94",
     "icon_box_GrL4Tj",
     "banner_image_iBwTmg",
-    "brand_list_e3Kpzb"
+    "brand_list_e3Kpzb",
+    "shopable_video_mjb4x9"
   ]
 }
