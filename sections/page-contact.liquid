@@ -16,7 +16,11 @@
   assign contact_info_heading = st.contact_info_heading
   assign contact_info_sub_heading = st.contact_info_sub_heading
 -%}
-
+<style>
+  .contact-map iframe{
+    width: 100%;
+  }
+</style>
 <section class="bls__contact-page mt-20">
   <div class="section-full {{ container }}">
     {%- if heading != blank or description != blank -%}
