@@ -126,7 +126,7 @@
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover;
+    object-fit: none;
 }
 
 @media (min-width: 1200px) {
