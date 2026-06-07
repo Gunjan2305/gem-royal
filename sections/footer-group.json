@@ -16,6 +16,7 @@
       "blocks": {
         "custom_text_g7EnHt": {
           "type": "custom_text",
+          "disabled": true,
           "settings": {
             "title": "Shivnya Clothings",
             "image_max": "200px",
@@ -25,10 +26,9 @@
         },
         "newsletter_xiCRRn": {
           "type": "newsletter",
-          "disabled": true,
           "settings": {
             "sub_title": "",
-            "title": "Sign Up To Newsletter",
+            "title": "Shivnya Clothings",
             "description": "Sign up for exclusive updates, new arrivals & insider only discounts",
             "email_placeholder": "Enter your email...",
             "email_btn_label": "Subscribe",
