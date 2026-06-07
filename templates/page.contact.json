@@ -76,74 +76,13 @@
         "reset_spacing": true
       }
     },
-    "banner_image_7GNeng": {
-      "type": "banner-image",
-      "blocks": {
-        "image_banner_FUJFCz": {
-          "type": "image_banner",
-          "settings": {
-            "banner_width": "12",
-            "banner_type": "image",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "image_opacity": 0,
-            "link": "",
-            "open_link": "_blank",
-            "content_banner_horizontal": "Bottom",
-            "subtext": "",
-            "title": "",
-            "content": "",
-            "btn_content": "",
-            "button_type": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "image_banner_FUJFCz"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "",
-        "heading_border": false,
-        "description": "",
-        "text_alignment": "text-center",
-        "container": "full-width",
-        "color_scheme": "",
-        "show_box_background": false,
-        "color_background": "",
-        "bg_overlay": 100,
-        "column_gap": 0,
-        "layout_on_mobile": false,
-        "design_banner": "text-overlay-image",
-        "text_align": "text-left",
-        "hover_effect": "none",
-        "h_font_size": 36,
-        "h_font_weight": "default",
-        "h_spacing": 10,
-        "sub_font_size": 18,
-        "sub_font_weight": "default",
-        "sub_spacing": 10,
-        "des_font_size": 16,
-        "des_font_weight": "default",
-        "des_spacing": 30,
-        "button_font_size": 16,
-        "button_font_weight": "default",
-        "button_spacing": 0,
-        "image_behavior": "none",
-        "text_position": "top",
-        "content_on_mobile": false,
-        "reset_color_mb": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": true
-      }
-    },
     "main": {
       "type": "page-contact",
       "settings": {
         "heading": "",
         "heading_border": false,
         "description": "",
-        "text_alignment": "text-center",
+        "text_alignment": "text-left",
         "container": "full-width",
         "iframe": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238133.18800900166!2d72.65747318239129!3d21.159120355102836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1780861118222!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
         "show_map": true,
@@ -239,7 +178,6 @@
   "order": [
     "page_heading_UMti8Q",
     "custom_text_TteUn4",
-    "banner_image_7GNeng",
     "main",
     "icon_box_4eCNUR",
     "divider_JHJpBJ",
