@@ -50,7 +50,7 @@
         "menu_Awdkhn": {
           "type": "menu",
           "settings": {
-            "menu": "",
+            "menu": "footer",
             "title": "Customer Service",
             "width": "16%"
           }
