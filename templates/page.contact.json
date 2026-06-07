@@ -163,20 +163,23 @@
         "iconbox_kKAUEN": {
           "type": "iconbox",
           "settings": {
+            "icon": "shopify://shop_images/Screenshot_5.png",
             "heading": "OUR STORE",
-            "description": "<p>7021 Washington SQ.<br/>South New York, NY 10012</p>"
+            "description": "<p>Surat, GJ, India-395006.<br/><br/></p>"
           }
         },
         "iconbox_mP3UXh": {
           "type": "iconbox",
           "settings": {
+            "icon": "shopify://shop_images/Screenshot_6.png",
             "heading": "CONTACT INFO",
-            "description": "<p>Telephone: 703.172.3412<br/>E-mail: hello@example.com</p>"
+            "description": "<p>Contact No: +91 9316385913<br/>E-mail: houseofshivnya@gmail.com</p>"
           }
         },
         "iconbox_zdhKAD": {
           "type": "iconbox",
           "settings": {
+            "icon": "shopify://shop_images/Screenshot_7.png",
             "heading": "BUSNESS HOURS",
             "description": "<p>Monday - Sunday:<br/>09:00 am - 20:00 pm</p>"
           }
