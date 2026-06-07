@@ -164,7 +164,7 @@
 
     .bls__slide-items .bls__slide-content,
     .bls__slide-items .slide-items {
-        min-height: var(--section-mb);
+        min-height: 150px;
     }
 
     .text-bellow-image .bls__slide-items .bls__slide-content,
