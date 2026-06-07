@@ -42,7 +42,7 @@
         "menu_3X6WPa": {
           "type": "menu",
           "settings": {
-            "menu": "",
+            "menu": "main-menu",
             "title": "Our Company",
             "width": "16%"
           }
