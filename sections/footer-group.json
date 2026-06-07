@@ -33,7 +33,7 @@
             "email_placeholder": "Enter your email...",
             "email_btn_label": "Subscribe",
             "note": "***By entering the e-mail you accept the <a href=\"/pages/term-condition\" title=\"Term & Condition\"><strong>terms and conditions</strong></a> and the <a href=\"/pages/privacy-policy\" title=\"Privacy Policy\"><strong>privacy policy.</strong></a>",
-            "design_newletter": "design_2",
+            "design_newletter": "default",
             "show_social": true,
             "style_light": true,
             "width": "33%"
