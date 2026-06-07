@@ -113,7 +113,7 @@
     "text_sale_tf": "uppercase",
     "enable_sw_only_product_detail": false,
     "color_swatches_size": "large",
-    "color_swatches_style": "rounded",
+    "color_swatches_style": "rounded-5",
     "swatch_type": "color",
     "swatch_selector_type": "text",
     "show_qv_product_availability": true,
