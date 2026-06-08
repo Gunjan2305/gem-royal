@@ -492,6 +492,7 @@
       "name": "Brand list",
       "settings": {
         "background_color": "",
+        "logo_width": 125,
         "margin_top": 40,
         "margin_bottom": 40
       }
