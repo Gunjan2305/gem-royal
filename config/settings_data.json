@@ -115,7 +115,7 @@
     "color_swatches_style": "rounded-5",
     "swatch_type": "color",
     "swatch_selector_type": "text",
-    "option_name_color": "color,Colour",
+    "option_name_color": "Colour",
     "option_name_size": "Size",
     "show_qv_product_availability": true,
     "show_qv_product_sku": true,
