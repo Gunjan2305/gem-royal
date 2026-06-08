@@ -10,11 +10,11 @@
 {
   "current": {
     "purchase_code": "6466eb88-7590-48fd-9a3b-3913dbf4680b",
-    "favicon": "shopify://shop_images/shivnya_809dcb5b-c688-472f-a468-98980426eb7e.png",
+    "favicon": "shopify://shop_images/S_logo.png",
     "logo_image_desktop": "shopify://shop_images/shivnya.png",
     "logo_svg": "",
     "logo_width_desktop": 75,
-    "logo_width_mobile": 100,
+    "logo_width_mobile": 60,
     "first_notification": "👉 Come back!",
     "rtl": false,
     "image_style": true,
