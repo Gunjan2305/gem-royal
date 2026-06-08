@@ -21,7 +21,7 @@
         "top_bar_font_size": 13,
         "top_bar_font_weight": 400,
         "top_bar_uppercase": false,
-        "show_phone_number": true,
+        "show_phone_number": false,
         "show_email": false,
         "show_social": true,
         "show_country": true,
