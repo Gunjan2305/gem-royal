@@ -2475,7 +2475,7 @@ body.template-index .show_border_top {
   background-color: var(--footer-background-color);
   color: var(--footer-text-color);
   /* --gradient-background: linear-gradient(102deg, rgba(255, 247, 223, 1) 21%, rgba(254, 254, 254, 1) 57.34%, rgba(255, 247, 223, 1) 79%) !important; */
-  --gradient-background:linear-gradient(169deg, rgba(255, 255, 255, 1), rgba(245, 217, 217, 1) 49.64%, rgba(255, 255, 255, 1) 99%) !important;
+  /* --gradient-background:linear-gradient(169deg, rgba(255, 255, 255, 1), rgba(245, 217, 217, 1) 49.64%, rgba(255, 255, 255, 1) 99%) !important; */
 }
 
 @media (min-width: 768px) {
