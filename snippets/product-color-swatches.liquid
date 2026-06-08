@@ -7,12 +7,28 @@
                     {% endif %}
                       <div class="metal-options-wrapper" style="display:flex; gap:15px;">
                         {% for metal in product.metafields.shopify['color-pattern'].value %}
+                          {% assign img_url_string = blank %}
+                          {% for variant in product.variants %}
+                            {% if variant.option1 == metal.label or variant.option2 == metal.label or variant.option3 == metal.label %}
+                              {% if variant.featured_image %}
+                                {% assign img_url_string = variant.featured_image | image_url: width: 100 %}
+                              {% elsif variant.image %}
+                                {% assign img_url_string = variant.image | image_url: width: 100 %}
+                              {% elsif variant.featured_media %}
+                                {% assign img_url_string = variant.featured_media | image_url: width: 100 %}
+                              {% endif %}
+                              
+                              {% if img_url_string != blank %}
+                                {% break %}
+                              {% endif %}
+                            {% endif %}
+                          {% endfor %}
                           <div class="metal-option" style="text-align:center;">
-                            {% if metal.color %}
+                            {% if metal.color or img_url_string != blank %}
                               <span
                                 class="swatch"
                                 title="{{ metal.label }}"
-                                style="display:inline-block; width:25px; height:25px; border-radius:50%; border:1.5px solid #555555; background: {{ metal.color }};"
+                                style="display:inline-block; width:30px; height:30px; border-radius:50%; border:1.5px solid #555555; {% if img_url_string != blank %}background-image: url({{ img_url_string }}) !important; background-size: cover !important; background-position: center !important;{% else %}background: {{ metal.color }};{% endif %}"
                               ></span>
                             {% endif %}
                             {% if metal.label %}

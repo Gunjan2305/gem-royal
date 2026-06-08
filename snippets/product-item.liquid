@@ -309,8 +309,10 @@
         {%- else -%}
           {%- assign hasColor = false -%}
           {%- for o in product.options_with_values -%}
+            {%- assign oNameDowncase = o.name | downcase -%}
             {%- for itemColor in option_name -%}
-              {%- if o.name == itemColor -%}
+              {%- assign colorItemDowncase = itemColor | downcase -%}
+              {%- if oNameDowncase == colorItemDowncase or oNameDowncase contains 'color' or oNameDowncase contains 'colour' -%}
                 {%- assign hasColor = true -%}
               {%- endif -%}
             {%- endfor -%}

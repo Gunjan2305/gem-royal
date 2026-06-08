@@ -215,7 +215,9 @@
                   assign selected_value = current_variant[option_index]
                   assign isColorOption = false
                   for colorItem in option_name
-                    if option.name == colorItem
+                    assign colorItemDowncase = colorItem | downcase
+                    assign optionNameDowncase = option.name | downcase
+                    if optionNameDowncase == colorItemDowncase or optionNameDowncase contains 'color' or optionNameDowncase contains 'colour'
                       assign isColorOption = true
                     endif
                   endfor
@@ -362,13 +364,20 @@
                     {% else %}
                       {%- for value in option.values -%}
                         {%- liquid
-                          assign op = 'option' | append: option.position
-                          assign variant = product.variants | where: op, value
-                          assign img = ''
-                          for i in variant
-                            if i.featured_image.src
-                              assign img = i.featured_image.src
-                              break
+                          assign img_url_string = blank
+                          for i in product.variants
+                            if i.option1 == value or i.option2 == value or i.option3 == value
+                              if i.featured_image
+                                assign img_url_string = i.featured_image | image_url: width: 100
+                              elsif i.image
+                                assign img_url_string = i.image | image_url: width: 100
+                              elsif i.featured_media
+                                assign img_url_string = i.featured_media | image_url: width: 100
+                              endif
+                              
+                              if img_url_string != blank
+                                break
+                              endif
                             endif
                           endfor
 
@@ -398,7 +407,8 @@
                           {% endif %}
                           data-color="{{ value | downcase }}"
                           data-filter-color="{{ value }}"
-                          data-image="{{ img | image_url: width: 100, height: 100 }}"
+                          data-image="{{ img_url_string }}"
+                          {% if img_url_string != blank %}style="background-image: url({{ img_url_string }}) !important; background-size: cover !important; background-position: center !important;"{% endif %}
                         >
                           <label class="bls__product-swatches">
                             <span class="bls_tooltip-content">{{ value }}</span>
@@ -527,131 +537,7 @@
             </variant-radios-quickview>
           {%- endunless -%}
         </div>
-        {% comment %} Product Size {% endcomment %}
-        <div class="product-size-selector">
-          {% assign ring_sizes = product.metafields.custom.ring_size %}
 
-          {% if block.settings.size_heading != blank %}
-            <h4 class="productSizeheading">{{ block.settings.size_heading }}</h4>
-          {% endif %}
-
-          {% if ring_sizes != blank %}
-            {% assign first_size = ring_sizes.value | first %}
-
-            <!-- Dropdown -->
-            <select id="product-size" name="size" class="productSize">
-              {% for size in ring_sizes.value %}
-                <option
-                  value="{{ size | escape }}"
-                  {% if forloop.first %}
-                    selected
-                  {% endif %}
-                >
-                  {{ size }}
-                </option>
-              {% endfor %}
-            </select>
-
-            <!-- Hidden input with first selected size -->
-            {% comment %} <input type="hidden" name="properties[Size]" id="selectedSizeInputField" value="{{ first_size }}"> {% endcomment %}
-          {% endif %}
-        </div>
-        {% comment %} Product color {% endcomment %}
-        <div class="product-metals">
-          {% assign colors = product.metafields.shopify['color-pattern'].value %}
-
-          {% if colors != blank %}
-            {% assign color_labels = '' %}
-            {% for metal in colors %}
-              {% if metal.label %}
-                {% assign color_labels = color_labels | append: metal.label | append: ',' %}
-              {% endif %}
-            {% endfor %}
-
-            {% assign color_labels_array = color_labels | split: ',' %}
-            {% assign first_color = color_labels_array[0] %}
-
-            <!-- Selected color text -->
-            <p class="selectedColor">
-              Color: <span class="selectedColorValue">{{ first_color }}</span>
-            </p>
-          {% endif %}
-
-          <div class="metal-options-wrapper" style="display:flex; gap:15px;">
-            {% for metal in colors %}
-              <div
-                class="metal-option {% if forloop.first %}selected-swatch{% endif %}"
-                style="text-align:center; cursor:pointer;"
-              >
-                {% if metal.color %}
-                  <span
-                    class="swatch"
-                    style="background: {{ metal.color }};"
-                  ></span>
-                {% endif %}
-                {% if metal.label %}
-                  <p class="colorlabel" style="display:none;">{{ metal.label }}</p>
-                {% endif %}
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-
-        <style>
-            .metal-option{
-              height: 25px;
-            }
-                  .swatch {
-                    display:inline-block;
-                    width:25px;
-                    height:25px;
-                    border-radius:50%;
-                    box-sizing:border-box;
-                    cursor:pointer;
-                    transition: all 0.2s ease;
-                  }
-
-                  .selected-swatch {
-                    box-Shadow: 0 0 0 2px #fff, 0 0 0 3px #000;
-                    border-radius:50%;
-                  }
-                   .selectedColor {
-            color: black;
-            font-size: 15px;
-            font-weight: 700;
-            padding-bottom: 10px;
-          }
-          .selectedColorValue{
-             color: #555555;
-             font-weight: 500;
-          }
-          .product-metals{
-            margin-bottom: 10px;
-          }
-        </style>
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const swatches = document.querySelectorAll('.metal-option');
-            const colorText = document.querySelector('.selectedColorValue');
-            const colorInput = document.getElementById('selectedColorInputField');
-
-            swatches.forEach((option) => {
-              option.addEventListener('click', () => {
-                // Remove old selection
-                document.querySelectorAll('.swatch').forEach((s) => s.classList.remove('selected-swatch'));
-
-                // Add new selection
-                const swatch = option.querySelector('.swatch');
-                const label = option.querySelector('.colorlabel').textContent;
-
-                swatch.classList.add('selected-swatch');
-                colorText.textContent = label;
-                colorInput.value = label;
-              });
-            });
-          });
-        </script>
 
         {%- if product.metafields.custom.external_affiliate == blank -%}
           <product-form
@@ -677,10 +563,8 @@
                 type="hidden"
                 name="id"
                 value="{{ product.selected_or_first_available_variant.id }}"
-                disabled
               >
-              <input type="hidden" name="properties[Color]" id="selectedColorInputField" value="{{ first_color }}">
-              <input type="hidden" name="properties[Size]" id="selectedProductsSize" value="{{ first_size }}">
+
               <div class="product-form__buttons flex mb-10 flex-wrap-table">
                 {%- if hidden_button_add_to_cart == blank -%}
                   <div class="bls__product-add-cart flex">
