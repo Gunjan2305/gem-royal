@@ -924,7 +924,7 @@ body:not(.template-index) .page-header {
 .header-logo-center .header-middle,
 .header-default .middle-top,
 .header-classic .header-middle {
-  padding: 30px 0px;
+  padding: 5px 0px;
 }
 }
 
