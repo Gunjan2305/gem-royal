@@ -15,7 +15,7 @@
       "type": "top-bar",
       "settings": {
         "container": "strecth-width",
-        "color_scheme": "scheme-735c978e-d3b7-474f-a3f7-562370446399",
+        "color_scheme": "default-color-scheme",
         "show_mobile": false,
         "show_border": false,
         "top_bar_font_size": 13,
