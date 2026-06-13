@@ -104,6 +104,12 @@
             "label_quantity_product_information": false
           }
         },
+        "custom_liquid_AGLk6x": {
+          "type": "custom_liquid",
+          "settings": {
+            "content": "<style>\n.odt_wrap{all:unset;display:block;box-sizing:border-box;background:#fafafa;border:1.5px solid #e5e7eb;border-radius:14px;padding:16px 20px 20px;margin:16px 0;font-family:'Poppins',sans-serif}\n.odt_wrap *{box-sizing:border-box}\n.odt_wrap .odt_sub{font-size:11px;color:#9ca3af;margin-bottom:18px;display:block}\n.odt_wrap .odt_row{display:flex;align-items:flex-start;justify-content:space-between;position:relative}\n.odt_wrap .odt_line{position:absolute;top:23px;left:16.5%;width:67%;height:3px;background:linear-gradient(90deg,#111,#555,#111);border-radius:2px;z-index:0}\n.odt_wrap .odt_step{display:flex;flex-direction:column;align-items:center;flex:1;position:relative;z-index:1;text-align:center;padding:0 2px}\n.odt_wrap .odt_ico{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:8px}\n.odt_wrap .odt_ico.g{background:#f3f4f6;box-shadow:0 3px 10px rgba(0,0,0,0.12)}\n.odt_wrap .odt_ico.b{background:#f3f4f6;box-shadow:0 3px 10px rgba(0,0,0,0.12)}\n.odt_wrap .odt_ico.y{background:#f3f4f6;box-shadow:0 3px 10px rgba(0,0,0,0.12)}\n.odt_wrap .odt_nm{font-size:12px;font-weight:700;color:#111827;margin-bottom:3px}\n.odt_wrap .odt_dt{font-size:11px;color:#6b7280;font-weight:500}\n.odt_wrap .odt_pill{display:inline-block;font-size:9px;font-weight:700;background:#111;color:#fff;border-radius:20px;padding:2px 9px;margin-top:4px;letter-spacing:0.3px}\n</style>\n\n<link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap\" rel=\"stylesheet\">\n\n<div class=\"odt_wrap\">\n  <span class=\"odt_sub\">Estimated delivery schedule for your order</span>\n  <div class=\"odt_row\">\n    <div class=\"odt_line\"></div>\n    <div class=\"odt_step\">\n      <div class=\"odt_ico g\">📦</div>\n      <div class=\"odt_nm\">Processing</div>\n      <div class=\"odt_dt\" id=\"odt_d0\"></div>\n      <span class=\"odt_pill\">Today</span>\n    </div>\n    <div class=\"odt_step\">\n      <div class=\"odt_ico b\">🚚</div>\n      <div class=\"odt_nm\">On the Way</div>\n      <div class=\"odt_dt\" id=\"odt_d3\"></div>\n    </div>\n    <div class=\"odt_step\">\n      <div class=\"odt_ico y\">✅</div>\n      <div class=\"odt_nm\">Delivered</div>\n      <div class=\"odt_dt\" id=\"odt_d6\"></div>\n    </div>\n  </div>\n</div>\n\n<script>\n(function(){\n  function odt_fmt(plus){\n    var d=new Date();\n    d.setDate(d.getDate()+plus);\n    var dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];\n    var mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];\n    return dn[d.getDay()]+', '+d.getDate()+' '+mn[d.getMonth()];\n  }\n  document.getElementById('odt_d0').textContent=odt_fmt(0);  // Aaj\ndocument.getElementById('odt_d3').textContent=odt_fmt(2);  // 2 din baad\ndocument.getElementById('odt_d6').textContent=odt_fmt(5);  // 6 din baad ✅\n})();\n</script>"
+          }
+        },
         "84ae25d8-caaa-414c-b983-91812f8c5046": {
           "type": "product_meta",
           "disabled": true,
@@ -142,6 +148,7 @@
         "062f7cd6-1265-4c29-a22c-e2bbebc5f2b6",
         "f98b666a-7c37-41ed-be7b-4a28f4a1e8b4",
         "37f20969-8bae-47ff-89e1-b0be3169e19a",
+        "custom_liquid_AGLk6x",
         "84ae25d8-caaa-414c-b983-91812f8c5046",
         "e3c98e10-4e94-4a55-bf4e-364e68cbe829",
         "product_short_description_FXVB7E"
