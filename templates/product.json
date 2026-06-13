@@ -83,8 +83,8 @@
             "type_size_chart": "1",
             "page": "size-guide",
             "text": "",
-            "show_compare_color": true,
-            "show_ask": true,
+            "show_compare_color": false,
+            "show_ask": false,
             "show_share": true
           }
         },
@@ -102,23 +102,6 @@
             "show_buy_now": true,
             "show_gift_card_recipient": true,
             "label_quantity_product_information": false
-          }
-        },
-        "product_group_DebTpa": {
-          "type": "product_group",
-          "settings": {}
-        },
-        "fb4d791a-e332-4dc8-b188-114a9e802869": {
-          "type": "pickup_availability",
-          "settings": {}
-        },
-        "c772ce81-4aa5-415d-8939-631c6d4897ff": {
-          "type": "delivery_return",
-          "settings": {
-            "show_delivery": true,
-            "delivery_text": "<p>Estimate delivery times: <strong>12-26 days</strong> (International), <strong>3-6 days</strong> (United States).</p>",
-            "show_return": true,
-            "return_text": "<p>Return within <strong>45 days</strong> of purchase. Duties & taxes are non-refundable.</p>"
           }
         },
         "84ae25d8-caaa-414c-b983-91812f8c5046": {
@@ -158,9 +141,6 @@
         "062f7cd6-1265-4c29-a22c-e2bbebc5f2b6",
         "f98b666a-7c37-41ed-be7b-4a28f4a1e8b4",
         "37f20969-8bae-47ff-89e1-b0be3169e19a",
-        "product_group_DebTpa",
-        "fb4d791a-e332-4dc8-b188-114a9e802869",
-        "c772ce81-4aa5-415d-8939-631c6d4897ff",
         "84ae25d8-caaa-414c-b983-91812f8c5046",
         "e3c98e10-4e94-4a55-bf4e-364e68cbe829",
         "product_short_description_FXVB7E"
@@ -197,6 +177,7 @@
         },
         "de7d437d-d088-49b0-9426-0e78b2a44fd7": {
           "type": "custom_tab",
+          "disabled": true,
           "settings": {
             "title": "Shipping & Returns",
             "tab_content": "content",
@@ -206,6 +187,7 @@
         },
         "cc1f49b6-1977-4f1f-9ab8-719556bd5832": {
           "type": "custom_tab",
+          "disabled": true,
           "settings": {
             "title": "Return Policies",
             "tab_content": "content",
