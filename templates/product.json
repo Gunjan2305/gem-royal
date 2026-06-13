@@ -291,7 +291,6 @@
     },
     "product-complementary": {
       "type": "product-complementary",
-      "disabled": true,
       "settings": {
         "heading": "Pairs well with",
         "heading_border": true,
