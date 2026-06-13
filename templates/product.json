@@ -106,6 +106,7 @@
         },
         "84ae25d8-caaa-414c-b983-91812f8c5046": {
           "type": "product_meta",
+          "disabled": true,
           "settings": {
             "show_vendors": false,
             "show_available": false,
