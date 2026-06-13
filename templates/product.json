@@ -159,7 +159,7 @@
         "use_variants_group": true,
         "swatch_size": "medium",
         "bought_together": true,
-        "sticky": false,
+        "sticky": true,
         "sticky_mode": "2"
       }
     },
