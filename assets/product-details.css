@@ -690,12 +690,7 @@ body.sticky-addcart-show .footer.footer {
 }
 
 @media (max-width: 767px) {
-  .bls__sticky-addcart:not(.sticky-addcart-show) {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+
 
   .bls__sticky-addcart {
     --input-height: 40px;
@@ -710,12 +705,20 @@ body.sticky-addcart-show .footer.footer {
   }
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
+  .product-form__buttons {
+    flex-wrap: nowrap !important;
+  }
+}
 
-  .bls__product-add-cart,
+@media (max-width: 479px) {
+  .product-form__buttons {
+    flex-wrap: nowrap !important;
+  }
+
   .product-form__buttons .min-height-50,
   .bls__product-add-cart .product-form__quantity {
-    width: 100%;
+    width: auto;
   }
 
   .product-form__buttons .min-height-50 .quantity__input {
@@ -724,15 +727,51 @@ body.sticky-addcart-show .footer.footer {
 }
 
 @media (max-width: 576px) {
+  .bls__sticky-addcart {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px 15px 20px 15px !important;
+  }
+
+  .sticky-addcart-product {
+    margin-bottom: 12px !important;
+  }
+
+  .sticky-addcart-product .bls__product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .sticky-addcart-product .price {
+    font-size: 1.2rem;
+  }
+
+  .sticky-addcart-img {
+    width: 45px !important;
+    height: 45px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-right: 12px !important;
+  }
+
   .sticky-addcart-product-form form.form {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 0;
+    flex-wrap: nowrap;
+    gap: 10px;
   }
 
   .sticky-addcart-product-form form.form select {
-    flex: 0 0 50%;
+    flex: 1;
+    min-width: 0;
+    margin: 0 !important;
   }
+
   .sticky-addcart-product-form,
   .sticky-addcart-product-form .product-form,
   .sticky-addcart-product-form .product-form form,
@@ -742,12 +781,17 @@ body.sticky-addcart-show .footer.footer {
 
   .sticky-addcart-product-form .product-form .product-form__buttons {
     flex: 1;
-    white-space: nowrap;
+    min-width: 50%;
+  }
+
+  .sticky-addcart-product-form .product-form__quantity {
+    display: none !important;
   }
 
   .sticky-addcart-product-form .product-form .product-form__submit {
     padding-left: 1rem;
     padding-right: 1rem;
+    border-radius: var(--btn-border-radius);
   }
 }
 

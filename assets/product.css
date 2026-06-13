@@ -1055,8 +1055,6 @@ quantity-input {
 }
 
 .shopify-payment-button__button--unbranded {
-  --btn-primary-bg: var(--border-color-base);
-  --btn-primary-color: var(--heading-font-weight);
   background-color: var(--btn-primary-bg);
   color: var(--btn-primary-color);
   border: 1px solid var(--btn-primary-bg);
