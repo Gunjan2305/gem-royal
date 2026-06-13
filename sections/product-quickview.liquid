@@ -671,23 +671,7 @@
               </div>
               {% if product.selected_or_first_available_variant.available and hidden_button_add_to_cart == blank %}
                 <div class="bls__product-dynamic-checkout">
-                  {%- if th_st.enable_quickview_terms_conditions -%}
-                    <div class="bls__terms-conditions flex mb-25">
-                      <div class="checkbox-group relative">
-                        <input
-                          class="input m-0 opacity-0 absolute inset-0 pointer"
-                          type="checkbox"
-                          name="conditions"
-                          id="conditions_form_qickview"
-                        >
-                        <span class="checkmark"></span>
-                      </div>
-                      <label class="label form-label pointer" for="conditions_form_qickview">
-                        {{ th_st.content_terms_conditions }}
-                      </label>
-                    </div>
-                  {%- endif -%}
-                  <div class="bls__payment-button bls-btn-checkout-qickview{% if th_st.enable_quickview_terms_conditions %} disabled{% endif %}">
+                  <div class="bls__payment-button bls-btn-checkout-qickview">
                     {{ form | payment_button }}
                   </div>
                 </div>
@@ -716,59 +700,7 @@
             </a>
           </div>
         {%- endif -%}
-        <ul class="bls__product-meta pl-0 list-none mt-25 capitalize">
-          {%- if enable_product_sku -%}
-            <li>
-              <span class="bls__product-meta-label">{{ 'products.product.sku' | t }}: </span>
-              <span class="bls__product-meta-value grey-color bls__product-sku-value">
-                {{- current_variant.sku | default: 'N/A' -}}
-              </span>
-            </li>
-          {%- endif -%}
-          {%- if enable_product_availability -%}
-            <li>
-              {%- liquid
-                assign lable_stock = 'products.product.instock' | t
-                if current_variant.inventory_management != null
-                  if current_variant.available and current_variant.inventory_quantity < 1
-                    assign lable_stock = 'products.product.pre_order' | t
-                  elsif current_variant.available
-                    assign lable_stock = 'products.product.instock' | t
-                  else
-                    assign lable_stock = 'products.product.outstock' | t
-                  endif
-                endif
-              -%}
-              <span class="bls__product-meta-label">{{ 'products.product.available' | t }}:</span>
-              <span class="bls__product-meta-value grey-color bls__availability-value">{{ lable_stock }}</span>
-            </li>
-          {%- endif -%}
-          {%- if enable_product_vendor and product.vendor != blank -%}
-            <li>
-              <span class="bls__product-meta-label">{{ 'products.product.vendor' | t }}:</span>
-              <span class="bls__product-meta-value grey-color">{{ product.vendor | link_to_vendor }}</span>
-            </li>
-          {%- endif -%}
-          {%- if enable_product_type and product.type != blank -%}
-            <li>
-              <span class="bls__product-meta-label">{{ 'products.product.type' | t }}:</span>
-              <span class="bls__product-meta-value grey-color">{{ product.type | link_to_type }}</span>
-            </li>
-          {%- endif -%}
-          {%- if enable_product_collection and product.collections.size > 0 -%}
-            <li class="bls__product-collections">
-              <span class="bls__product-meta-label">{{ 'products.product.collections' | t }}:</span>
-              <span class="bls__product-meta-value grey-color">
-                {% for collection in product.collections %}
-                  <a href="{{ collection.url }}" class="hover:text-black">
-                    {{ collection.title }}
-                    {%- if forloop.last != true -%},{%- endif -%}
-                  </a>
-                {% endfor %}
-              </span>
-            </li>
-          {%- endif -%}
-        </ul>
+        {% comment %} Product Meta removed as requested {% endcomment %}
       </div>
     </div>
   </div>
