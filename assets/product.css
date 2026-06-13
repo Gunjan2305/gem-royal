@@ -1774,3 +1774,27 @@ table.custom-table-detail-product::after {
   padding-bottom: 20px;
 
 }
+
+/* Quick Add To Cart - Icon Only Override */
+.bls__product-item quick-buy.bls__product-addtocart .bls__button-content,
+.bls__product-item .bls__product-action .bls__js-addtocart .bls__button-content {
+  display: none !important;
+}
+
+.bls__product-item quick-buy.bls__product-addtocart .bls__js-addtocart,
+.bls__product-item .bls__product-action .bls__js-addtocart {
+  width: 4rem !important;
+  min-width: 4rem !important;
+  height: 4rem !important;
+  padding: 0 !important;
+  margin: 0 auto !important; /* Center the button itself if it's in a full-width container */
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+}
+
+.bls__product-item quick-buy.bls__product-addtocart {
+  display: flex;
+  justify-content: center;
+}
