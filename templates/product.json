@@ -107,12 +107,12 @@
         "84ae25d8-caaa-414c-b983-91812f8c5046": {
           "type": "product_meta",
           "settings": {
-            "show_vendors": true,
-            "show_available": true,
-            "show_sku": true,
+            "show_vendors": false,
+            "show_available": false,
+            "show_sku": false,
             "show_barcode": false,
-            "show_type": true,
-            "show_collection": true
+            "show_type": false,
+            "show_collection": false
           }
         },
         "e3c98e10-4e94-4a55-bf4e-364e68cbe829": {
