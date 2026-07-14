@@ -500,6 +500,15 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "15405363926663611884": {
+        "type": "shopify://apps/trustview/blocks/app_embed_script/bda8b0f7-273b-4b6e-ab43-02c3fec9d11a",
+        "disabled": false,
+        "settings": {
+          "widget_language": "en-US"
+        }
+      }
+    },
     "color_schemes": {
       "default-color-scheme": {
         "settings": {
