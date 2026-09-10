@@ -143,7 +143,7 @@
             </a>
             {% if st.action_click == 'fancybox' %}
               <div class="lookbook__popup-items items-{{ block.id }}-{{ i }} absolute transition">
-                {%- render 'product-item' | product: product | lookbook: true -%}
+                {%- render 'product-item', product: product, lookbook: true -%}
               </div>
             {%- endif -%}
           </div>
@@ -197,3 +197,13 @@
     </div>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'product-item' | product: product | lookbook: true -%}"
+  to: "{%- render 'product-item', product: product, lookbook: true -%}"
+  position: 5788..5851
+{% endcomment %}

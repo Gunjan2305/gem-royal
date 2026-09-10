@@ -58,20 +58,20 @@
             <div class="col-header-center d-inline-flex justify-content-center">
               {%- liquid
                 if top_search
-                  render 'top-search' | layout4: true | header_vertical: true
+                  render 'top-search', layout4: true, header_vertical: true
                 endif
               -%}
             </div>
             <div class="col-header-right mb-col-3 d-flex justify-content-end align-items-center">
               {%- liquid
                 if wishlist
-                  render 'wishlist' | headerMeagShop: true
+                  render 'wishlist', headerMeagShop: true
                 endif
                 if my_account
-                  render 'my-account' | headerMeagShop: my_account
+                  render 'my-account', headerMeagShop: my_account
                 endif
                 if minicart and theme_st.hidden_button_add_to_cart == false
-                  render 'minicart' | headerMeagShop: true
+                  render 'minicart', headerMeagShop: true
                 endif
               -%}
             </div>
@@ -84,13 +84,13 @@
             {% if enable_vertical %}
               <div class="col-header-left">
                 {%- liquid
-                  render 'vertical-menu' | headerMeagShop: true
+                  render 'vertical-menu', headerMeagShop: true
                 -%}
               </div>
             {% endif %}
             <div class="col-header-center {%  if submenu_center == true %} bls_submenu-center {%  endif %} {% if show_phone == blank and show_find_store == blank and enable_vertical == blank %} d-flex justify-content-center{%  endif %}">
               {%- liquid
-                render 'horizontal-menu' | headerMeagShop: true
+                render 'horizontal-menu', headerMeagShop: true
               -%}
             </div>
             {%- if show_phone or show_find_store != blank -%}
@@ -801,3 +801,29 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "                  render 'top-search' | layout4: true | header_vertical:
+    true"
+  to: "                  render 'top-search', layout4: true, header_vertical: true"
+  position: 2622..2697
+- from: "                  render 'wishlist' | headerMeagShop: true"
+  to: "                  render 'wishlist', headerMeagShop: true"
+  position: 2908..2965
+- from: "                  render 'my-account' | headerMeagShop: my_account"
+  to: "                  render 'my-account', headerMeagShop: my_account"
+  position: 3018..3083
+- from: "                  render 'minicart' | headerMeagShop: true"
+  to: "                  render 'minicart', headerMeagShop: true"
+  position: 3182..3239
+- from: 'render ''vertical-menu'' | headerMeagShop: true'
+  to: 'render ''vertical-menu'', headerMeagShop: true'
+  position: 3762..3806
+- from: 'render ''horizontal-menu'' | headerMeagShop: true'
+  to: 'render ''horizontal-menu'', headerMeagShop: true'
+  position: 4151..4197
+{% endcomment %}

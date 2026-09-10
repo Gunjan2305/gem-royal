@@ -9,7 +9,7 @@
         {%- liquid
           assign image_product = current_variant.featured_image | default: product.featured_image
         -%}
-        {%- render 'responsive-image' | image: image_product | type: 'product' | cls: 'bls__product-grid bls__product-img-sw' -%}
+        {%- render 'responsive-image', image: image_product, type: 'product', cls: 'bls__product-grid bls__product-img-sw' -%}
       </div>
       <div class="sticky-addcart-infos">
         {%- if settings.show_vendors -%}
@@ -136,3 +136,15 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'responsive-image' | image: image_product | type: 'product' |
+    cls: 'bls__product-grid bls__product-img-sw' -%}"
+  to: "{%- render 'responsive-image', image: image_product, type: 'product', cls:
+    'bls__product-grid bls__product-img-sw' -%}"
+  position: 690..808
+{% endcomment %}

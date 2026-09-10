@@ -85,7 +85,7 @@
               {% case item.object_type %}
                 {%- when 'product' -%}
                   <div class="col-lg-3 col-md-4 col-6 bls__product-load">
-                    {%- render 'product-item' | product: item -%}
+                    {%- render 'product-item', product: item -%}
                   </div>
                 {%- when 'article' -%}
                   <div class="col-lg-3 col-md-4 col-6 bls__product-load">
@@ -174,3 +174,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'product-item' | product: item -%}"
+  to: "{%- render 'product-item', product: item -%}"
+  position: 3159..3203
+{% endcomment %}

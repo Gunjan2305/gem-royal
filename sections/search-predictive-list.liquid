@@ -62,11 +62,11 @@
         <div id="search-results-list" class="search-results-list list list-view-items">
           {%- if predictive_search_type == 'search_suggest' -%}
             {%- for product in results -%}
-              {%- render 'product-popular-list-item' | product: product -%}
+              {%- render 'product-popular-list-item', product: product -%}
             {%- endfor -%}
           {%- else -%}
             {%- for product in results limit: 4 -%}
-              {%- render 'product-popular-list-item' | product: product -%}
+              {%- render 'product-popular-list-item', product: product -%}
             {%- endfor -%}
           {%- endif -%}
         </div>
@@ -133,3 +133,16 @@
     {%- endif -%}
   </div>
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'product-popular-list-item' | product: product -%}"
+  to: "{%- render 'product-popular-list-item', product: product -%}"
+  position: 2492..2552
+- from: "{%- render 'product-popular-list-item' | product: product -%}"
+  to: "{%- render 'product-popular-list-item', product: product -%}"
+  position: 2669..2729
+{% endcomment %}

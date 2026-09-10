@@ -148,7 +148,7 @@
                               class="menu-list"
                               style="--row-gap: 40px; --col-desktop:{{ block_st.promotion_menu_column }};"
                             >
-                              {%- render 'submenu-list' | link: link -%}
+                              {%- render 'submenu-list', link: link -%}
                             </div>
                           {% endif %}
                           {%- if block_st.promotion_image_1 != blank or block_st.promotion_image_2 != blank -%}
@@ -214,7 +214,7 @@
                               class="menu-list"
                               style="--row-gap: 40px; --col-desktop:{{ block_st.collection_menu_column }};"
                             >
-                              {%- render 'submenu-list' | link: link -%}
+                              {%- render 'submenu-list', link: link -%}
                             </div>
                           {% endif %}
                           {%- if collection_count > 0 -%}
@@ -257,7 +257,7 @@
                                                 alt: banner_alt
                                             }}
                                           {%- else -%}
-                                            {% render 'placeholder-render' | type: "collection" %}
+                                            {% render 'placeholder-render', type: "collection" %}
                                           {%- endif -%}
                                         </a>
                                         <div class="bls__collection-infor pointer-events-none absolute text-center">
@@ -297,7 +297,7 @@
                               class="menu-list"
                               style="--row-gap: 40px; --col-desktop:{{ block_st.product_menu_column }};"
                             >
-                              {%- render 'submenu-list' | link: link -%}
+                              {%- render 'submenu-list', link: link -%}
                             </div>
                           {% endif %}
                           {%- if product_count > 0 -%}
@@ -325,9 +325,9 @@
                                           <div class="bls__product-main-img">
                                             {%- if product_value.has_only_default_variant -%}
                                               {%- if img[0] != blank -%}
-                                                {%- render 'responsive-image' | image: img[0] | type: 'product' | cls: 'bls__product-grid bls__product-img-sw' -%}
+                                                {%- render 'responsive-image', image: img[0], type: 'product', cls: 'bls__product-grid bls__product-img-sw' -%}
                                               {%- else -%}
-                                                {%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh' -%}
+                                                {%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh' -%}
                                               {%- endif -%}
                                             {%- else -%}
                                               {%- assign hasColor = false -%}
@@ -341,20 +341,20 @@
                                               {%- if hasColor -%}
                                                 {%- for variant in product_value.variants limit: 1 -%}
                                                   {%- if variant.featured_image != blank -%}
-                                                    {%- render 'responsive-image' | image: variant.featured_image | type: 'product' | cls: 'bls__product-grid bls__product-img-sw' -%}
+                                                    {%- render 'responsive-image', image: variant.featured_image, type: 'product', cls: 'bls__product-grid bls__product-img-sw' -%}
                                                   {%- else -%}
                                                     {%- if img[0] != blank -%}
-                                                      {%- render 'responsive-image' | image: img[0] | type: 'product' | cls: 'bls__product-grid bls__product-img-sw' -%}
+                                                      {%- render 'responsive-image', image: img[0], type: 'product', cls: 'bls__product-grid bls__product-img-sw' -%}
                                                     {%- else -%}
-                                                      {%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh' -%}
+                                                      {%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh' -%}
                                                     {%- endif -%}
                                                   {%- endif -%}
                                                 {%- endfor -%}
                                               {%- else -%}
                                                 {%- if img[0] != blank -%}
-                                                  {%- render 'responsive-image' | image: img[0] | type: 'product' | cls: 'bls__product-grid bls__product-img-sw' -%}
+                                                  {%- render 'responsive-image', image: img[0], type: 'product', cls: 'bls__product-grid bls__product-img-sw' -%}
                                                 {%- else -%}
-                                                  {%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh' -%}
+                                                  {%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh' -%}
                                                 {%- endif -%}
                                               {%- endif -%}
                                             {%- endif -%}
@@ -362,7 +362,7 @@
                                           {%- if settings.enable_hover_image -%}
                                             {%- if img[1] != blank -%}
                                               <div class="bls__product-hover-img opacity-0 absolute inset-0">
-                                                {%- render 'responsive-image' | image: img[1] | type: 'product' | cls: 'bls__product-grid' -%}
+                                                {%- render 'responsive-image', image: img[1], type: 'product', cls: 'bls__product-grid' -%}
                                               </div>
                                             {%- endif -%}
                                           {%- endif -%}
@@ -391,7 +391,7 @@
                                           and settings.color_type != 'dropdown'
                                           and settings.enable_sw_only_product_detail == false
                                         -%}
-                                          {%- render 'product-color-swatches' | product: product_value -%}
+                                          {%- render 'product-color-swatches', product: product_value -%}
                                         {%- endif -%}
                                       </div>
                                     </div>
@@ -434,7 +434,7 @@
                     <i class="lnr lnr-cross fs-20 close-menu pointer"></i>
                   </div>
                   <ul class="dropdown p-0 list-none my-0">
-                    {%- render 'submenu-list' | link: link | menu_type: 'dropdown' -%}
+                    {%- render 'submenu-list', link: link, menu_type: 'dropdown' -%}
                   </ul>
                 </div>
               {%- endif -%}
@@ -485,8 +485,76 @@
         {% endif %}
       </ul>
       {% if section_st.menu_mb_category %}
-        {%- render 'categories-menu-mobile' | st: section_st -%}
+        {%- render 'categories-menu-mobile', st: section_st -%}
       {% endif %}
     </div>
   </nav>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'submenu-list' | link: link -%}"
+  to: "{%- render 'submenu-list', link: link -%}"
+  position: 6988..7029
+- from: "{%- render 'submenu-list' | link: link -%}"
+  to: "{%- render 'submenu-list', link: link -%}"
+  position: 11152..11193
+- from: '{% render ''placeholder-render'' | type: "collection" %}'
+  to: '{% render ''placeholder-render'', type: "collection" %}'
+  position: 13957..14010
+- from: "{%- render 'submenu-list' | link: link -%}"
+  to: "{%- render 'submenu-list', link: link -%}"
+  position: 16199..16240
+- from: "{%- render 'responsive-image' | image: img[0] | type: 'product' | cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  to: "{%- render 'responsive-image', image: img[0], type: 'product', cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  position: 17929..18040
+- from: "{%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh'
+    -%}"
+  to: "{%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh'
+    -%}"
+  position: 18148..18228
+- from: "{%- render 'responsive-image' | image: variant.featured_image | type: 'product'
+    | cls: 'bls__product-grid bls__product-img-sw' -%}"
+  to: "{%- render 'responsive-image', image: variant.featured_image, type: 'product',
+    cls: 'bls__product-grid bls__product-img-sw' -%}"
+  position: 19272..19399
+- from: "{%- render 'responsive-image' | image: img[0] | type: 'product' | cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  to: "{%- render 'responsive-image', image: img[0], type: 'product', cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  position: 19596..19707
+- from: "{%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh'
+    -%}"
+  to: "{%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh'
+    -%}"
+  position: 19827..19907
+- from: "{%- render 'responsive-image' | image: img[0] | type: 'product' | cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  to: "{%- render 'responsive-image', image: img[0], type: 'product', cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  position: 20285..20396
+- from: "{%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh'
+    -%}"
+  to: "{%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh'
+    -%}"
+  position: 20508..20588
+- from: "{%- render 'responsive-image' | image: img[1] | type: 'product' | cls: 'bls__product-grid'
+    -%}"
+  to: "{%- render 'responsive-image', image: img[1], type: 'product', cls: 'bls__product-grid'
+    -%}"
+  position: 21128..21219
+- from: "{%- render 'product-color-swatches' | product: product_value -%}"
+  to: "{%- render 'product-color-swatches', product: product_value -%}"
+  position: 23121..23184
+- from: "{%- render 'submenu-list' | link: link | menu_type: 'dropdown' -%}"
+  to: "{%- render 'submenu-list', link: link, menu_type: 'dropdown' -%}"
+  position: 24918..24982
+- from: "{%- render 'categories-menu-mobile' | st: section_st -%}"
+  to: "{%- render 'categories-menu-mobile', st: section_st -%}"
+  position: 26668..26723
+{% endcomment %}

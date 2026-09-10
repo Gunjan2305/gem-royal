@@ -168,7 +168,7 @@
                       <div
                         class="placeholder-background absolute inset-0 {% if st.image_effect == 'zoomout_image' %}load-img{% endif %}"  {% if st.image_effect == 'parallax_image' %}data-swiper-parallax-x="100%"{% endif %}
                       >
-                        {%- render 'placeholder-render' | type: 'image' -%}
+                        {%- render 'placeholder-render', type: 'image' -%}
                       </div>
                     {%- endif -%}
                   </div>
@@ -255,7 +255,7 @@
                       <div
                         class="placeholder-background {% if st.image_behavior != 'none' %} animate--{{ st.image_behavior }}{% endif %} absolute inset-0"
                       >
-                        {%- render 'placeholder-render' | type: 'image' class: 'load-img' -%}
+                        {%- render 'placeholder-render', type: 'image', class: 'load-img' -%}
                       </div>
                     {%- endif -%}
                   </div>
@@ -1026,3 +1026,16 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'placeholder-render' | type: 'image' -%}"
+  to: "{%- render 'placeholder-render', type: 'image' -%}"
+  position: 8495..8545
+- from: "{%- render 'placeholder-render' | type: 'image' class: 'load-img' -%}"
+  to: "{%- render 'placeholder-render', type: 'image', class: 'load-img' -%}"
+  position: 14404..14473
+{% endcomment %}

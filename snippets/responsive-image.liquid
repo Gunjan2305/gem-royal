@@ -82,6 +82,16 @@
       style="--point:{{ image.presentation.focal_point }}"
     >
   {%- else -%}
-    {%- render 'placeholder-render' | type: type -%}
+    {%- render 'placeholder-render', type: type -%}
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'placeholder-render' | type: type -%}"
+  to: "{%- render 'placeholder-render', type: type -%}"
+  position: 3204..3251
+{% endcomment %}

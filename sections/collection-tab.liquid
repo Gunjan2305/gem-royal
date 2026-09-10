@@ -178,9 +178,9 @@
             data-id="{{ block.id }}"
           >
             {%- if tab_type == 'grid' -%}
-              {%- render 'product-grid-layout' | st: st | bl: current_collection | block: block -%}
+              {%- render 'product-grid-layout', st: st, bl: current_collection, block: block -%}
             {%- else -%}
-              {%- render 'product-carousel-layout' | st: st | bl: current_collection | index: forloop.index -%}
+              {%- render 'product-carousel-layout', st: st, bl: current_collection, index: forloop.index -%}
             {%- endif -%}
           </div>
         {%- endfor -%}
@@ -528,3 +528,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'product-grid-layout' | st: st | bl: current_collection | block:
+    block -%}"
+  to: "{%- render 'product-grid-layout', st: st, bl: current_collection, block: block
+    -%}"
+  position: 7636..7718
+- from: "{%- render 'product-carousel-layout' | st: st | bl: current_collection |
+    index: forloop.index -%}"
+  to: "{%- render 'product-carousel-layout', st: st, bl: current_collection, index:
+    forloop.index -%}"
+  position: 7758..7852
+{% endcomment %}

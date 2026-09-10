@@ -106,7 +106,7 @@
                   <div class="bls__grid {{ product_style }}">
                     <div id="search-results-list" class="search-results-list list list-view-items">
                       {%- for product in collection.products limit: 5 -%}
-                        {%- render 'product-item' | product: product -%}
+                        {%- render 'product-item', product: product -%}
                       {%- endfor -%}
                     </div>
                   </div>
@@ -123,3 +123,13 @@
     {%- endif -%}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'product-item' | product: product -%}"
+  to: "{%- render 'product-item', product: product -%}"
+  position: 4911..4958
+{% endcomment %}

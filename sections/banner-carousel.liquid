@@ -230,7 +230,7 @@
                       </picture>
                     </div>
                   {%- else -%}
-                    {%- render 'responsive-image' | cls: "h-full" -%}
+                    {%- render 'responsive-image', cls: "h-full" -%}
                   {%- endif -%}
                 </div>
               </div>
@@ -1001,3 +1001,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- render ''responsive-image'' | cls: "h-full" -%}'
+  to: '{%- render ''responsive-image'', cls: "h-full" -%}'
+  position: 10622..10670
+{% endcomment %}

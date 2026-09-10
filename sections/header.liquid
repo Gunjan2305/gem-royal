@@ -239,7 +239,7 @@
                   endif
                 endif
                 if my_account or show_text_account
-                  render 'my-account' | show_text_account: show_text_account
+                  render 'my-account', show_text_account: show_text_account
                 endif
                 if show_text_account
                   if top_search
@@ -925,3 +925,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "                  render 'my-account' | show_text_account: show_text_account"
+  to: "                  render 'my-account', show_text_account: show_text_account"
+  position: 10897..10972
+{% endcomment %}

@@ -17,7 +17,7 @@
   {%- when 'product' -%}
     <script src="{{ 'drift.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'main-product.js' | asset_url }}" defer="defer" type="module"></script>
-  {%- when 'collection' and collection.handle -%}
+  {%- when 'collection' -%}
     <script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>
 {%- endcase -%}
 {% if template contains 'customers' %}
@@ -26,4 +26,13 @@
 {% if settings.animations_enabled %}
   <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
 {% endif %}
-<script src="{{ 'section-popup.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'section-popup.js' | asset_url }}" defer="defer"></script>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 778..803
+{%- endcomment -%}

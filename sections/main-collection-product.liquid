@@ -207,7 +207,7 @@
                     </picture>
                   {%- else -%}
                     <div class="desktop {% if image_behavior != 'none' %} animate--{{ image_behavior }}{% endif %} {% if image_mobile != blank %}medium-hide{% endif %}">
-                      {%- render 'responsive-image' | image_behavior: image_behavior -%}
+                      {%- render 'responsive-image', image_behavior: image_behavior -%}
                     </div>
                   {%- endif -%}
                 </a>
@@ -254,7 +254,7 @@
           </div>
         {% endif %}
         {%- liquid
-          render 'collection-toolbar' | st: st, pageurl: view, enable_sidebar: enable_sidebar, sidebar_ps: sidebar_ps, products_column: products_column
+          render 'collection-toolbar', st: st, pageurl: view, enable_sidebar: enable_sidebar, sidebar_ps: sidebar_ps, products_column: products_column
         -%}
         {%- if enable_sidebar -%}
           {%- render 'filter-current' -%}
@@ -340,9 +340,9 @@
                       class="bls__grid__item"
                     >
                       {%- if view == 'list' -%}
-                        {%- render 'product-list-item', product: product | index: forloop.index -%}
+                        {%- render 'product-list-item', product: product, index: forloop.index -%}
                       {%- else -%}
-                        {%- render 'product-item', product: product | index: forloop.index -%}
+                        {%- render 'product-item', product: product, index: forloop.index -%}
                       {%- endif -%}
                     </div>
                   {%- endfor -%}
@@ -1050,4 +1050,24 @@
   margin: 0 10.4px;
   text-align: left !important;
   }
-</style>
+</style>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'responsive-image' | image_behavior: image_behavior -%}"
+  to: "{%- render 'responsive-image', image_behavior: image_behavior -%}"
+  position: 10201..10266
+- from: 'render ''collection-toolbar'' | st: st, pageurl: view, enable_sidebar: enable_sidebar,
+    sidebar_ps: sidebar_ps, products_column: products_column'
+  to: 'render ''collection-toolbar'', st: st, pageurl: view, enable_sidebar: enable_sidebar,
+    sidebar_ps: sidebar_ps, products_column: products_column'
+  position: 13116..13256
+- from: "{%- render 'product-list-item', product: product | index: forloop.index -%}"
+  to: "{%- render 'product-list-item', product: product, index: forloop.index -%}"
+  position: 17505..17579
+- from: "{%- render 'product-item', product: product | index: forloop.index -%}"
+  to: "{%- render 'product-item', product: product, index: forloop.index -%}"
+  position: 17639..17708
+{%- endcomment -%}

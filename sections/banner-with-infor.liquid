@@ -154,7 +154,7 @@
 
               {%- else -%}
                 <div class="desktop {% if st.image_behavior != 'none' %} animate--{{ st.image_behavior }}{% endif %} {% if image_mobile != blank %}medium-hide{% endif %}">
-                  {%- render 'responsive-image' | image_behavior: st.image_behavior -%}
+                  {%- render 'responsive-image', image_behavior: st.image_behavior -%}
                 </div>
               {%- endif -%}
             </a>
@@ -707,3 +707,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'responsive-image' | image_behavior: st.image_behavior -%}"
+  to: "{%- render 'responsive-image', image_behavior: st.image_behavior -%}"
+  position: 7772..7840
+{% endcomment %}

@@ -55,7 +55,7 @@
             <div class="col-header-left col-menu-center">
               {%- liquid
                 if top_search
-                  render 'top-search' | layout4: true | header_vertical: true
+                  render 'top-search', layout4: true, header_vertical: true
                 endif
               -%}
             </div>
@@ -65,7 +65,7 @@
             <div class="col-header-right mb-col-3 d-flex justify-content-end align-items-center">
               {%- liquid
                 if my_account
-                  render 'my-account' | show_text_account: false
+                  render 'my-account', show_text_account: false
                 endif
                 if wishlist
                   render 'wishlist'
@@ -84,13 +84,13 @@
             {% if enable_vertical %}
               <div class="col-header-left">
                 {%- liquid
-                  render 'vertical-menu' | headerMeagShop: true
+                  render 'vertical-menu', headerMeagShop: true
                 -%}
               </div>
             {% endif %}
             <div class="col-header-center {%  if submenu_center == true %} bls_submenu-center {%  endif %} {% if show_phone == blank and show_find_store == blank and enable_vertical == blank %} d-flex justify-content-center{%  endif %}">
               {%- liquid
-                render 'horizontal-menu' | headerMeagShop: true
+                render 'horizontal-menu', headerMeagShop: true
               -%}
             </div>
             {%- if show_phone or show_find_store != blank -%}
@@ -801,3 +801,23 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "                  render 'top-search' | layout4: true | header_vertical:
+    true"
+  to: "                  render 'top-search', layout4: true, header_vertical: true"
+  position: 2480..2555
+- from: "                  render 'my-account' | show_text_account: false"
+  to: "                  render 'my-account', show_text_account: false"
+  position: 2941..3004
+- from: 'render ''vertical-menu'' | headerMeagShop: true'
+  to: 'render ''vertical-menu'', headerMeagShop: true'
+  position: 3685..3729
+- from: 'render ''horizontal-menu'' | headerMeagShop: true'
+  to: 'render ''horizontal-menu'', headerMeagShop: true'
+  position: 4074..4120
+{% endcomment %}

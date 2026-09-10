@@ -76,9 +76,9 @@
                 >
                   {%- assign media_position_q = 1 -%}
                   {%- if featured_media != blank -%}
-                    {%- render 'responsive-image' | image: featured_media | type: 'product' | cls: 'bls__product-grid bls__product-img-sw' -%}
+                    {%- render 'responsive-image', image: featured_media, type: 'product', cls: 'bls__product-grid bls__product-img-sw' -%}
                   {%- else -%}
-                    {%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh' -%}
+                    {%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh' -%}
                   {%- endif -%}
                 </div>
               {%- endif -%}
@@ -93,9 +93,9 @@
                     data-position="{{ media_position_q }}"
                   >
                     {%- if media != blank -%}
-                      {%- render 'responsive-image' | image: media | type: 'product' | cls: 'bls__product-grid bls__product-img-sw' -%}
+                      {%- render 'responsive-image', image: media, type: 'product', cls: 'bls__product-grid bls__product-img-sw' -%}
                     {%- else -%}
-                      {%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh' -%}
+                      {%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh' -%}
                     {%- endif -%}
                   </div>
                 {%- endunless -%}
@@ -151,7 +151,7 @@
         <div class="bls__product-review-sold flex flex-wrap align-items-center fs-large">
           {%- if enable_product_review -%}
             <div class="bls__pro-reviews">
-              {% render 'product-review' | review_star: true | product: product %}
+              {% render 'product-review', review_star: true, product: product %}
             </div>
           {%- endif -%}
           {%- if show_qv_sold_product -%}
@@ -889,3 +889,33 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'responsive-image' | image: featured_media | type: 'product' |
+    cls: 'bls__product-grid bls__product-img-sw' -%}"
+  to: "{%- render 'responsive-image', image: featured_media, type: 'product', cls:
+    'bls__product-grid bls__product-img-sw' -%}"
+  position: 3595..3714
+- from: "{%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh'
+    -%}"
+  to: "{%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh'
+    -%}"
+  position: 3766..3846
+- from: "{%- render 'responsive-image' | image: media | type: 'product' | cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  to: "{%- render 'responsive-image', image: media, type: 'product', cls: 'bls__product-grid
+    bls__product-img-sw' -%}"
+  position: 4483..4593
+- from: "{%- render 'responsive-image' | type: 'product' | cls: 'bls__product-grid-plh'
+    -%}"
+  to: "{%- render 'responsive-image', type: 'product', cls: 'bls__product-grid-plh'
+    -%}"
+  position: 4649..4729
+- from: "{% render 'product-review' | review_star: true | product: product %}"
+  to: "{% render 'product-review', review_star: true, product: product %}"
+  position: 7104..7170
+{% endcomment %}

@@ -580,7 +580,7 @@
                           <div
                             class="swiper-slide"
                           >
-                            {%- render 'responsive-image' | type: 'product' | cls: 'bls__product-tab-plh' -%}
+                            {%- render 'responsive-image', type: 'product', cls: 'bls__product-tab-plh' -%}
                             <div
                               class="bls__product-details"
                             >
@@ -599,7 +599,7 @@
                           <div
                             class="swiper-slide"
                           >
-                            {%- render 'product-item' | product: product -%}
+                            {%- render 'product-item', product: product -%}
                           </div>
                         {%- endfor -%}
                       {%- endif -%}
@@ -615,7 +615,7 @@
                         <div
                           class="bls__product-item list-view-item plh-product flex flex-nowrap mb-20 pb-15"
                         >
-                          {%- render 'responsive-image' | type: 'product' | cls: 'overflow-hidden relative col-3 mr-15 border mw-100 bls__product-tab-plh' -%}
+                          {%- render 'responsive-image', type: 'product', cls: 'overflow-hidden relative col-3 mr-15 border mw-100 bls__product-tab-plh' -%}
                           <div
                             class="bls__product-details flex-1"
                           >
@@ -631,7 +631,7 @@
                       {%- endfor -%}
                     {%- else -%}
                       {%- for product in collection.products limit: block.settings.maximum -%}
-                        {%- render 'product-popular-list-item' | product: product -%}
+                        {%- render 'product-popular-list-item', product: product -%}
                       {%- endfor -%}
                     {%- endif -%}
                   </div>
@@ -700,7 +700,7 @@
                     loading="lazy"
                   >
                 {%- else -%}
-                  {%- render 'placeholder-render' | type: 'image' | cls: 'bls__collection-grid-plh' -%}
+                  {%- render 'placeholder-render', type: 'image', cls: 'bls__collection-grid-plh' -%}
                 {%- endif -%}
               </div>
             </a>
@@ -710,3 +710,31 @@
     {%- endfor -%}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'responsive-image' | type: 'product' | cls: 'bls__product-tab-plh'
+    -%}"
+  to: "{%- render 'responsive-image', type: 'product', cls: 'bls__product-tab-plh'
+    -%}"
+  position: 27102..27181
+- from: "{%- render 'product-item' | product: product -%}"
+  to: "{%- render 'product-item', product: product -%}"
+  position: 28023..28070
+- from: "{%- render 'responsive-image' | type: 'product' | cls: 'overflow-hidden relative
+    col-3 mr-15 border mw-100 bls__product-tab-plh' -%}"
+  to: "{%- render 'responsive-image', type: 'product', cls: 'overflow-hidden relative
+    col-3 mr-15 border mw-100 bls__product-tab-plh' -%}"
+  position: 28759..28889
+- from: "{%- render 'product-popular-list-item' | product: product -%}"
+  to: "{%- render 'product-popular-list-item', product: product -%}"
+  position: 29596..29656
+- from: "{%- render 'placeholder-render' | type: 'image' | cls: 'bls__collection-grid-plh'
+    -%}"
+  to: "{%- render 'placeholder-render', type: 'image', cls: 'bls__collection-grid-plh'
+    -%}"
+  position: 32861..32944
+{% endcomment %}
